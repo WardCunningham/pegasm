@@ -43,8 +43,8 @@ public class Pegasm {
 	// parse tracing
 
     void mark(String nonterminal) {
-    	print("----------------------------------");
-    	print(matched()+"<"+nonterminal+">"+matching());
+    	// print("----------------------------------");
+    	print(matched()+" {{"+nonterminal+"-"+pos+"}} "+matching());
     }
 
     int back() {
