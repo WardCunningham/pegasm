@@ -44,7 +44,7 @@ public class Pegasm {
 
     void mark(String nonterminal) {
     	// print("----------------------------------");
-    	print(matched()+" {{"+nonterminal+"-"+pos+"}} "+matching());
+    	print(matched()+" {"+nonterminal+"-"+pos+"} "+matching());
     }
 
     int back() {
