@@ -3,39 +3,32 @@ import java.util.*;
 
 public class Pegasm {
 
-	BufferedReader input;
-	Deque<String> parsed = new ArrayDeque<String>();
+	char[] input = new char[1000000];
+	int pos = 0; // next char
+	int end = 0; // pos of eof
 
-	void setInput(BufferedReader input) {
-		this.input = input;
-		parsed.addFirst("");
+	void load(String file) {
+		try {
+			Reader reader = new FileReader(file);
+			end = reader.read(input, 0, 1000000);
+		} catch (Exception e) {
+			error("can't load file: " + e);
+		}
 	}
 
 	// Usage: java Pegasm input-file
 	// Build: ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/pegasm.sublime-build
 
     public static void main(String[] args) {
-    	Parser parser = null;
-    	BufferedReader input = null;
 
-    	try {
-	    	input = new BufferedReader(new FileReader(args[0]));
-	    } catch (FileNotFoundException e) {
-    		error("can't open " + args[0]);
-    	}
+        Parser parser = new Parser();
+        parser.load(args[0]);
 
-        parser = new Parser();
-        parser.setInput(input);
-
-    	try {
-			if (parser.Grammar()) {
-				print("match");
-			} else {
-				print("no match");
-			}		
-    	} catch (IOException e) {
-    		error("can't read " + args[0]);
-    	}
+		if (parser.Grammar()) {
+			print("done, match");
+		} else {
+			print("done, no match");
+		}
     }
 
     static void error (String message) {
@@ -47,209 +40,77 @@ public class Pegasm {
     	System.out.println(message);
     }
 
-    // input matching utilities
+	// parse tracing
 
-    void mark(String nonterminal) throws IOException {
-    	input.mark(10000);
-    	parsed.addFirst(parsed.peekFirst());
+    void mark(String nonterminal) {
     	print("----------------------------------");
-    	print(parsed.peekFirst()+" "+nonterminal);
+    	print(matched()+"<"+nonterminal+">"+matching());
     }
 
-    void reset() throws IOException {
-    	input.reset();
-    	parsed.removeFirst();
+    int back() {
+    	for (int i=0; i<100; i++) {
+    		if (i>=pos || input[pos-i-1] == '\n') {
+    			return i;
+    		}
+    	}
+    	return 100;
     }
 
-    boolean dot() throws IOException {
-    	input.mark(1);
-    	int ch = input.read();
-    	if (ch >= 0) {
-    		parsed.addFirst(parsed.removeFirst()+((char)ch));
+    int ahead() {
+    	for (int i=0; i<100; i++) {
+    		if (pos+i >= end || input[pos+i] == '\n') {
+    			return i;
+    		}
+    	}
+    	return 100;
+    }
+
+    String matched() {
+    	return new String(input, pos-back(), back());
+    }
+
+    String matching() {
+    	return new String(input, pos, ahead());
+    }
+
+    // input matchers
+
+    boolean dot() {
+    	if (pos<end) {
+    		pos++;
     		return true;
     	} else {
-    		input.reset();
     		return false;
     	}
     }
 
-    boolean match(String token) throws IOException {
-    	input.mark(token.length());
+    boolean match(String token) {
+    	int at = pos;
+    	if (end-pos < token.length()) {
+    		return false;
+    	}
     	for (int i = 0; i < token.length(); i++){
     		char want = token.charAt(i);
-    		int have = input.read();
-    		if ((int)want != have) {
-    			input.reset();
+    		char have = input[pos++];
+    		if (want != have) {
+    			pos = at;
     			return false;
     		}
     	}
-    	parsed.addFirst(parsed.removeFirst()+token);
     	return true;
     }
 
-    boolean range(char from, char to) throws IOException {
-    	input.mark(1);
-    	int have = input.read();
-    	if (((int)from) <= have && ((int)to) >= have) {
+    boolean range(char from, char to) {
+    	int at = pos;
+    	if (pos == end) {
+    		return false;
+    	}
+    	char have = input[pos++];
+    	if (from <= have && to >= have) {
     		return true;
     	} else {
-    		input.reset();
+    		pos = at;
     		return false;
     	}
     }
 }
-
-
-// Production rules
-// return true if match with input consumed
-// return false otherwise with input unchanged
-
-class Parser extends Pegasm {
-
-    // Grammar <- Spacing Definition+ EndOfFile
-    boolean Grammar() throws IOException {
-    	mark("Grammar");
-    	if (Spacing() && Many_Definition() && EndOfFile()) {
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-    // Definition+
-    boolean Many_Definition() throws IOException {
-    	mark("Definition+");
-    	if (Definition()) {
-    		while (Definition()) {}
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-
-    // Definition <- Identifier LEFTARROW Expression
-    boolean Definition() throws IOException {
-    	mark("Definition");
-    	if (Identifier() && LEFTARROW() && Expression()) {
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-
-    // Expression <- Sequence (SLASH Sequence)*
-    boolean Expression() throws IOException {
-    	mark ("Expression");
-    	if (false) {
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-
-    // Identifier <- IdentStart IdentCont* Spacing
-    boolean Identifier() throws IOException {
-    	mark("Identifier");
-    	if (IdentStart() && IdentCont_Any() && Spacing()) {
-			return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-    boolean IdentCont_Any() throws IOException {
-    	while (IdentCont_Any()) {}
-    	return true;
-    }
-
-	// IdentStart <- [a-zA-Z_]
-	boolean IdentStart() throws IOException {
-		mark("IdentStart");
-		if (range('a','z') || range('A','Z') || match("_")) {
-			return true;
-		} else {
-			reset();
-			return false;
-		}
-	}
-
-	// IdentCont <- IdentStart / [0-9]
-	boolean IdentCont() throws IOException {
-		mark("IdentCont");
-		if (IdentStart() || range('0','9')) {
-			return true;
-		} else {
-			reset();
-			return false;
-		}
-	}
-
-    // LEFTARROW <- ’<-’ Spacing
-    boolean LEFTARROW() throws IOException {
-    	if (match("<-") && Spacing()) {
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-
-	// Spacing <- (Space / Comment)*
-    boolean Spacing() throws IOException {
-    	while (Space() || Comment()) {}
-    	return true;
-    }
-
-    // Comment <- ’#’ (!EndOfLine .)* EndOfLine
-    boolean Comment() throws IOException {
-    	mark("Comment");
-    	if (match("#") && Comment_Any() && EndOfLine()) {
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-    // (!EndOfLine .)*
-    boolean Comment_Any() throws IOException {
-    	while (!EndOfLine() && dot()) {}
-    	return true;
-    }
-
-    // Space <- ’ ’ / ’\t’ / EndOfLine
-    boolean Space() throws IOException {
-    	mark("Space");
-    	if (match(" ") || match("\t") || EndOfLine()) {
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-
-    // EndOfLine <- ’\r\n’ / ’\n’ / ’\r’
-    boolean EndOfLine() throws IOException {
-    	mark("EndOfLine");
-    	if (match("\r\n") || match("\n") || match("\r")) {
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-
-    // EndOfFile <- !.
-    boolean EndOfFile() throws IOException {
-    	mark("EndOfFile");
-    	if (!dot()) {
-    		return true;
-    	} else {
-    		reset();
-    		return false;
-    	}
-    }
-}
-
