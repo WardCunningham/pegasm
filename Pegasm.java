@@ -4,7 +4,7 @@ import java.util.*;
 public class Pegasm {
 
 	BufferedReader input;
-	Deque <String> parsed = new ArrayDeque();
+	Deque<String> parsed = new ArrayDeque<String>();
 
 	void setInput(BufferedReader input) {
 		this.input = input;
@@ -12,6 +12,7 @@ public class Pegasm {
 	}
 
 	// Usage: java Pegasm input-file
+	// Build: ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/pegasm.sublime-build
 
     public static void main(String[] args) {
     	Parser parser = null;
@@ -85,6 +86,17 @@ public class Pegasm {
     	parsed.addFirst(parsed.removeFirst()+token);
     	return true;
     }
+
+    boolean range(char from, char to) throws IOException {
+    	input.mark(1);
+    	int have = input.read();
+    	if (((int)from) <= have && ((int)to) >= have) {
+    		return true;
+    	} else {
+    		input.reset();
+    		return false;
+    	}
+    }
 }
 
 
@@ -97,7 +109,87 @@ class Parser extends Pegasm {
     // Grammar <- Spacing Definition+ EndOfFile
     boolean Grammar() throws IOException {
     	mark("Grammar");
-    	if (Spacing()) {
+    	if (Spacing() && Many_Definition() && EndOfFile()) {
+    		return true;
+    	} else {
+    		reset();
+    		return false;
+    	}
+    }
+    // Definition+
+    boolean Many_Definition() throws IOException {
+    	mark("Definition+");
+    	if (Definition()) {
+    		while (Definition()) {}
+    		return true;
+    	} else {
+    		reset();
+    		return false;
+    	}
+    }
+
+    // Definition <- Identifier LEFTARROW Expression
+    boolean Definition() throws IOException {
+    	mark("Definition");
+    	if (Identifier() && LEFTARROW() && Expression()) {
+    		return true;
+    	} else {
+    		reset();
+    		return false;
+    	}
+    }
+
+    // Expression <- Sequence (SLASH Sequence)*
+    boolean Expression() throws IOException {
+    	mark ("Expression");
+    	if (false) {
+    		return true;
+    	} else {
+    		reset();
+    		return false;
+    	}
+    }
+
+    // Identifier <- IdentStart IdentCont* Spacing
+    boolean Identifier() throws IOException {
+    	mark("Identifier");
+    	if (IdentStart() && IdentCont_Any() && Spacing()) {
+			return true;
+    	} else {
+    		reset();
+    		return false;
+    	}
+    }
+    boolean IdentCont_Any() throws IOException {
+    	while (IdentCont_Any()) {}
+    	return true;
+    }
+
+	// IdentStart <- [a-zA-Z_]
+	boolean IdentStart() throws IOException {
+		mark("IdentStart");
+		if (range('a','z') || range('A','Z') || match("_")) {
+			return true;
+		} else {
+			reset();
+			return false;
+		}
+	}
+
+	// IdentCont <- IdentStart / [0-9]
+	boolean IdentCont() throws IOException {
+		mark("IdentCont");
+		if (IdentStart() || range('0','9')) {
+			return true;
+		} else {
+			reset();
+			return false;
+		}
+	}
+
+    // LEFTARROW <- ’<-’ Spacing
+    boolean LEFTARROW() throws IOException {
+    	if (match("<-") && Spacing()) {
     		return true;
     	} else {
     		reset();
@@ -107,7 +199,6 @@ class Parser extends Pegasm {
 
 	// Spacing <- (Space / Comment)*
     boolean Spacing() throws IOException {
-    	mark("Spacing");
     	while (Space() || Comment()) {}
     	return true;
     }
@@ -122,10 +213,21 @@ class Parser extends Pegasm {
     		return false;
     	}
     }
+    // (!EndOfLine .)*
     boolean Comment_Any() throws IOException {
-    	mark("Comment_Any");
     	while (!EndOfLine() && dot()) {}
     	return true;
+    }
+
+    // Space <- ’ ’ / ’\t’ / EndOfLine
+    boolean Space() throws IOException {
+    	mark("Space");
+    	if (match(" ") || match("\t") || EndOfLine()) {
+    		return true;
+    	} else {
+    		reset();
+    		return false;
+    	}
     }
 
     // EndOfLine <- ’\r\n’ / ’\n’ / ’\r’
@@ -139,10 +241,10 @@ class Parser extends Pegasm {
     	}
     }
 
-    // Space <- ’ ’ / ’\t’ / EndOfLine
-    boolean Space() throws IOException {
-    	mark("Space");
-    	if (match(" ") || match("\t") || EndOfLine()) {
+    // EndOfFile <- !.
+    boolean EndOfFile() throws IOException {
+    	mark("EndOfFile");
+    	if (!dot()) {
     		return true;
     	} else {
     		reset();
