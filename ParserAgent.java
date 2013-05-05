@@ -65,7 +65,6 @@ class ParserMethodVisitor extends MethodVisitor implements Opcodes {
     private final String owner;
     private final String name;
     private final String desc;
-    private int complexity = 0;
 
     public ParserMethodVisitor(MethodVisitor mv, int access, String name, String desc, String owner) {
         super(Opcodes.ASM4, mv);
@@ -83,19 +82,6 @@ class ParserMethodVisitor extends MethodVisitor implements Opcodes {
 		visitVarInsn(ALOAD, 0);
 		visitLdcInsn(name);
 		visitMethodInsn(INVOKEVIRTUAL, "Parser", "mark", "(Ljava/lang/String;)V");
-
-        complexity++;
     }
 
-    @Override
-    public void visitJumpInsn(int opcode, Label label) {
-        super.visitJumpInsn(opcode, label);
-        complexity++;
-    }
-
-    @Override
-    public void visitEnd() {
-        super.visitEnd();
-        System.err.println("Complexity of method " + owner + "#" + name + " is " + complexity);
-    }
 }
