@@ -5,12 +5,12 @@ import java.util.*;
 // return true if match with input consumed
 // return false otherwise with input unchanged
 
-class Parser extends Pegasm {
+public class Parser extends Pegasm {
 
     // Grammar <- Spacing Definition+ EndOfFile
     boolean Grammar() {
     	int at = pos;
-        mark("Grammar");
+        //mark("Grammar");
     	if (Spacing() && Many_Definition() && EndOfFile()) {
     		return true;
     	} else {
@@ -21,7 +21,7 @@ class Parser extends Pegasm {
     // Definition+
     boolean Many_Definition() {
     	int at = pos;
-        mark("Definition+");
+        //mark("Definition+");
     	if (Definition()) {
     		while (Definition()) {}
     		return true;
@@ -34,7 +34,7 @@ class Parser extends Pegasm {
     // Definition <- Identifier LEFTARROW Expression
     boolean Definition() {
     	int at = pos;
-        mark("Definition");
+        //mark("Definition");
     	if (Identifier() && LEFTARROW() && Expression()) {
     		return true;
     	} else {
@@ -46,7 +46,7 @@ class Parser extends Pegasm {
     // Expression <- Sequence (SLASH Sequence)*
     boolean Expression() {
     	int at = pos;
-        mark ("Expression");
+        //mark ("Expression");
     	if (false) {
     		return true;
     	} else {
@@ -58,7 +58,7 @@ class Parser extends Pegasm {
     // Identifier <- IdentStart IdentCont* Spacing
     boolean Identifier() {
     	int at = pos;
-        mark("Identifier");
+        //mark("Identifier");
     	if (IdentStart() && IdentCont_Any() && Spacing()) {
 			return true;
     	} else {
@@ -74,7 +74,7 @@ class Parser extends Pegasm {
 	// IdentStart <- [a-zA-Z_]
 	boolean IdentStart() {
 		int at = pos;
-        mark("IdentStart");
+        //mark("IdentStart");
 		if (range('a','z') || range('A','Z') || match("_")) {
 			return true;
 		} else {
@@ -86,7 +86,7 @@ class Parser extends Pegasm {
 	// IdentCont <- IdentStart / [0-9]
 	boolean IdentCont() {
 		int at = pos;
-        mark("IdentCont");
+        //mark("IdentCont");
 		if (IdentStart() || range('0','9')) {
 			return true;
 		} else {
@@ -98,7 +98,7 @@ class Parser extends Pegasm {
     // LEFTARROW <- ’<-’ Spacing
     boolean LEFTARROW() {
         int at = pos;
-        mark("LEFTARROW");
+        //mark("LEFTARROW");
     	if (match("<-") && Spacing()) {
     		return true;
     	} else {
@@ -109,7 +109,7 @@ class Parser extends Pegasm {
 
 	// Spacing <- (Space / Comment)*
     boolean Spacing() {
-        mark("Spacing");
+        //mark("Spacing");
     	while (Space() || Comment()) {}
     	return true;
     }
@@ -117,7 +117,7 @@ class Parser extends Pegasm {
     // Comment <- ’#’ (!EndOfLine .)* EndOfLine
     boolean Comment() {
     	int at = pos;
-        mark("Comment");
+        //mark("Comment");
     	if (match("#") && Comment_Any() && EndOfLine()) {
     		return true;
     	} else {
@@ -145,7 +145,7 @@ class Parser extends Pegasm {
     // Space <- ’ ’ / ’\t’ / EndOfLine
     boolean Space() {
     	int at = pos;
-        mark("Space");
+        //mark("Space");
     	if (match(" ") || match("\t") || EndOfLine()) {
     		return true;
     	} else {
@@ -157,7 +157,7 @@ class Parser extends Pegasm {
     // EndOfLine <- ’\r\n’ / ’\n’ / ’\r’
     boolean EndOfLine() {
     	int at = pos;
-        mark("EndOfLine");
+        //mark("EndOfLine");
     	if (match("\r\n") || match("\n") || match("\r")) {
     		return true;
     	} else {
@@ -169,7 +169,7 @@ class Parser extends Pegasm {
     // EndOfFile <- !.
     boolean EndOfFile() {
     	int at = pos;
-        mark("EndOfFile");
+        //mark("EndOfFile");
     	if (!dot()) {
     		return true;
     	} else {
