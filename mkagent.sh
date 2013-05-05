@@ -1,0 +1,1 @@
+jar -cfm agent.jar mkagent.txt ParserAgent.class
