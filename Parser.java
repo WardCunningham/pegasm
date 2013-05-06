@@ -9,16 +9,8 @@ public class Parser extends Pegasm {
 
     // Grammar <- Spacing Definition+ EndOfFile
     boolean Grammar() { int at = pos; return be (Spacing() && Grammar_Many() && EndOfFile(), at); }
-    boolean Grammar_Many() {
-    	int at = pos;
-    	if (Definition()) {
-    		while (Definition()) {}
-    		return true;
-    	} else {
-    		pos = at;
-    		return false;
-    	}
-    }
+    boolean Grammar_Many() { int at = pos; return be (Definition() && Grammar_Any(), at); }
+    boolean Grammar_Any() { while (Definition()) {} return true; }
 
     // Definition <- Identifier LEFTARROW Expression
     boolean Definition() { int at = pos; return be (Identifier() && LEFTARROW() && Expression(), at); }
