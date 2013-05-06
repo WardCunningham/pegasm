@@ -48,10 +48,10 @@ public class Parser extends Pegasm {
     boolean Identifier_Any() { while (IdentCont()) {} return true; }
 
 	// IdentStart <- [a-zA-Z_]
-	private boolean IdentStart() { int at = pos; return be (range('a','z') || range('A','Z') || match("_"), at); }
+	boolean IdentStart() { int at = pos; return be (range('a','z') || range('A','Z') || match("_"), at); }
 
 	// IdentCont <- IdentStart / [0-9]
-	private boolean IdentCont() { int at = pos; return be (IdentStart() || range('0','9'), at); }
+	boolean IdentCont() { int at = pos; return be (IdentStart() || range('0','9'), at); }
 
     // Literal <- [’] (![’] Char)* [’] Spacing / ["] (!["] Char)* ["] Spacing
     boolean Literal() { int at = pos; return be (chars("\'") && Literal_Any1() && chars("\'") && Spacing() || chars("\"") && Literal_Any2() && chars("\"") && Spacing(), at); }
@@ -118,15 +118,6 @@ public class Parser extends Pegasm {
 
     // EndOfFile <- !.
     boolean EndOfFile() { int at = pos; return be (EndOfFile_Not(), at); }
-    boolean EndOfFile_Not() {
-        int at = pos;
-        if (dot()) {
-            pos = at;
-    		return false;
-    	} else {
-    		pos = at;
-    		return true;
-    	}
-    }
+    boolean EndOfFile_Not() { int at = pos; boolean b = !dot(); pos = at; return b; }
 }
 

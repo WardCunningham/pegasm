@@ -100,6 +100,21 @@ public class Pegasm {
     	return true;
     }
 
+    boolean chars(String klass) {
+    	int at = pos;
+    	if (pos == end) {
+    		return false;
+    	}
+    	char have = input[pos++];
+    	if (klass.indexOf(have) >= 0) {
+    		return true;
+    	} else {
+    		pos = at;
+    		return false;
+    	}
+
+    }
+
     boolean range(char from, char to) {
     	int at = pos;
     	if (pos == end) {
