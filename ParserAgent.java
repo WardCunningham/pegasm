@@ -79,6 +79,9 @@ class ParserMethodVisitor extends MethodVisitor implements Opcodes {
         if (!("()Z".equals(desc))) {
         	return;
         }
+        if (name.contains("_")) {
+        	return;
+        }
 		visitVarInsn(ALOAD, 0);
 		visitLdcInsn(name);
 		visitMethodInsn(INVOKEVIRTUAL, "Parser", "mark", "(Ljava/lang/String;)V");
