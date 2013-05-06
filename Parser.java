@@ -40,10 +40,10 @@ public class Parser extends Pegasm {
     boolean Identifier_Any() { while (IdentCont()) {} return true; }
 
 	// IdentStart <- [a-zA-Z_]
-	boolean IdentStart() { int at = pos; return be (range('a','z') || range('A','Z') || match("_"), at); }
+	private boolean IdentStart() { int at = pos; return be (range('a','z') || range('A','Z') || match("_"), at); }
 
 	// IdentCont <- IdentStart / [0-9]
-	boolean IdentCont() { int at = pos; return be (IdentStart() || range('0','9'), at); }
+	private boolean IdentCont() { int at = pos; return be (IdentStart() || range('0','9'), at); }
 
     // Literal <- [’] (![’] Char)* [’] Spacing / ["] (!["] Char)* ["] Spacing
     boolean Literal() { int at = pos; return be (chars("\'") && Literal_Any1() && chars("\'") && Spacing() || chars("\"") && Literal_Any2() && chars("\"") && Spacing(), at); }
@@ -95,7 +95,7 @@ public class Parser extends Pegasm {
     boolean DOT() { int at = pos; return be (match(".") && Spacing(), at); }
 
 	// Spacing <- (Space / Comment)*
-    boolean Spacing() { while (Space() || Comment()) {} return true; }
+    private boolean Spacing() { while (Space() || Comment()) {} return true; }
 
     // Comment <- ’#’ (!EndOfLine .)* EndOfLine
     boolean Comment() { int at = pos; return be (match("#") && Comment_Any() && EndOfLine(), at); }
@@ -103,10 +103,10 @@ public class Parser extends Pegasm {
     boolean Comment_Not() { int at = pos; boolean b = !EndOfLine(); pos = at; return b; }
 
     // Space <- ’ ’ / ’\t’ / EndOfLine
-    boolean Space() { int at = pos; return be (match(" ") || match("\t") || EndOfLine(), at); }
+    private boolean Space() { int at = pos; return be (match(" ") || match("\t") || EndOfLine(), at); }
 
     // EndOfLine <- ’\r\n’ / ’\n’ / ’\r’
-    boolean EndOfLine() { int at = pos; return be (match("\r\n") || match("\n") || match("\r"), at); }
+    private boolean EndOfLine() { int at = pos; return be (match("\r\n") || match("\n") || match("\r"), at); }
 
     // EndOfFile <- !.
     boolean EndOfFile() { int at = pos; return be (EndOfFile_Not(), at); }

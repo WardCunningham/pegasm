@@ -65,12 +65,14 @@ class ParserMethodVisitor extends MethodVisitor implements Opcodes {
     private final String owner;
     private final String name;
     private final String desc;
+    private final int access;
 
     public ParserMethodVisitor(MethodVisitor mv, int access, String name, String desc, String owner) {
         super(Opcodes.ASM4, mv);
         this.owner = owner;
         this.name = name;
         this.desc = desc;
+        this.access = access;
     }
     
     @Override
@@ -80,6 +82,9 @@ class ParserMethodVisitor extends MethodVisitor implements Opcodes {
         	return;
         }
         if (name.contains("_")) {
+        	return;
+        }
+        if ((access & ACC_PRIVATE) != 0) {
         	return;
         }
 		visitVarInsn(ALOAD, 0);
