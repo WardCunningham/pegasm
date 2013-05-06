@@ -113,4 +113,22 @@ public class Pegasm {
     		return false;
     	}
     }
+
+    // backtrack helper
+    boolean be (boolean b, int at) {
+    	if (!b) {
+    		pos = at;
+    	}
+    	return b;
+    }
+
+    // stub iterators
+    boolean any(boolean b) { return b; }	// b*
+    boolean many(boolean b) { return b; }	// b+
+    boolean opt(boolean b) { return b; }	// b?
+
+    // stub lookahead
+    boolean and(boolean b) { return b; }	// &b
+    boolean not(boolean b) { return b; }	// !b
+
 }
