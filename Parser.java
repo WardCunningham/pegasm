@@ -32,7 +32,8 @@ public class Parser extends Pegasm {
     boolean Suffix_Opt() { if (QUESTION() || STAR() || PLUS()) {}; return true; }
 
     // Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
-    boolean Primary() {int at = pos; return be (Identifier() && Primary_Not() || OPEN() && Expression() && CLOSE() || Literal() || Klass() || DOT(), at); }
+    boolean Primary() {int at = pos; return be (Primary_Seq() || OPEN() && Expression() && CLOSE() || Literal() || Klass() || DOT(), at); }
+    boolean Primary_Seq() {int at = pos; return be (Identifier() && Primary_Not(), at); } // note scope of lookahead
     boolean Primary_Not() { int at = pos; boolean b = !LEFTARROW(); pos = at; return b; }
 
     // Identifier <- IdentStart IdentCont* Spacing
