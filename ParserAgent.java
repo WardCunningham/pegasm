@@ -1,13 +1,21 @@
+import java.io.*;
 import java.lang.instrument.*;
+import java.lang.reflect.*;
 import java.security.ProtectionDomain;
 import org.objectweb.asm.*;
+import org.objectweb.asm.util.*;
 
 public class ParserAgent {
 
     public static void premain(String agentArgs, Instrumentation inst) {
-    	System.out.println("if this were a real agent you'd be transformed by now");
-        ParserTransformer xform = new ParserTransformer();
-        inst.addTransformer(xform);
+    	if (agentArgs==null || agentArgs.equals("")){
+    	    System.out.println("if this were a real agent you'd be transformed by now");
+    	} else {
+    		System.out.println("here we go transforming with arguments '"+agentArgs+"'");
+			ParserTransformer xform = new ParserTransformer();
+            xform.setArgs(agentArgs);
+	        inst.addTransformer(xform);
+    	}
     }
 
     public static void main(String args[]) {
@@ -15,7 +23,13 @@ public class ParserAgent {
     }
 }
 
-class ParserTransformer implements ClassFileTransformer {
+class ParserTransformer implements ClassFileTransformer, Opcodes {
+
+	String agentArgs = null;
+
+	void setArgs(String agentArgs) {
+		this.agentArgs = agentArgs;
+	}
 
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined,
             ProtectionDomain protectionDomain, byte[] classfileBuffer)
@@ -27,10 +41,35 @@ class ParserTransformer implements ClassFileTransformer {
 
         ClassReader reader = new ClassReader(classfileBuffer);
         ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
-        ClassVisitor visitor = new ParserClassVisitor(classWriter);
+    	PrintWriter printWriter = new PrintWriter(System.out);
+    	ClassVisitor visitor = classWriter;
+
+    	for (char ch : agentArgs.toCharArray()){
+            System.out.println("now switching on: "+ch);
+    		switch (ch) {
+                case 'a':
+                    visitor = new TraceClassVisitor(visitor, new ASMifier() , printWriter);
+                    break;
+                case 't':
+                    visitor = new TraceClassVisitor(visitor, printWriter);
+                    break;
+    			case 'p':
+    				visitor = new ParserClassVisitor(visitor);
+    				break;
+    			case 'c':
+    				visitor = new CheckClassAdapter(visitor);
+                    break;
+    			default:
+    				System.out.println("can't transform with visitor: "+ch);
+    		}
+	    }
+
+        // ParserClassVisitor.explain(visitor);
         reader.accept(visitor, ClassReader.EXPAND_FRAMES);
 
+        printWriter.flush();
         return classWriter.toByteArray();
+
     }
 }
 
@@ -41,6 +80,21 @@ class ParserClassVisitor extends ClassVisitor {
 
     public ParserClassVisitor(ClassVisitor cv) {
         super(Opcodes.ASM4, cv);
+    }
+
+    static void explain(ClassVisitor cv) {
+        ClassVisitor v = cv;
+        try {
+            Field field = ClassVisitor.class.getDeclaredField("cv");
+            field.setAccessible(true);
+            while (v != null) {
+                System.out.println("we'll visit with: "+v);
+                // v = v.cv;
+                v = (ClassVisitor) field.get(v);
+            }
+        } catch (Exception e) {
+            System.out.println("Can't reflect: "+e);
+        }
     }
 
     @Override
