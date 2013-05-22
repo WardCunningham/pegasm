@@ -17,7 +17,7 @@ public static void main(String args[]) {
 
 public static byte[] dump () throws Exception {
 
-ClassWriter cw = new ClassWriter(0);
+ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
 FieldVisitor fv;
 MethodVisitor mv;
 AnnotationVisitor av0;
