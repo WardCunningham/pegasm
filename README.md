@@ -38,3 +38,14 @@ will inline these into single methods. The parser reports "done, match" upon a s
 ParserAgent.java rewrites the Parser.java bytecodes to include various instruction level debugging. 
 The compiled agent should be specified on the Parser command line with single character arguments
 to enable specific debugging.
+
+Example
+=======
+
+We test pegasm on the published PEG grammar. 
+See [Grammar.peg](https://github.com/WardCunningham/pegasm/blob/master/Grammar.peg).
+
+It can be instructive to watch the grammar parse itself.
+See [good](https://github.com/WardCunningham/pegasm/blob/master/good) for a trace of 
+Parser.java productions as they parse Grammar.peg. By convention "private" productions
+aren't shown in the trace. We use this the skip lots of boring whitespace processing.
