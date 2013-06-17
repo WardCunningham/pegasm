@@ -278,28 +278,28 @@ mv.visitLocalVariable("at", "I", null, l1, l2, 1);
 mv.visitMaxs(3, 2);
 mv.visitEnd();
 }
-{
-mv = cw.visitMethod(0, "Sequence_Any", "()Z", null, null);
-mv.visitCode();
-Label l0 = new Label();
-mv.visitLabel(l0);
-mv.visitLineNumber(24, l0);
-mv.visitFrame(Opcodes.F_NEW, 1, new Object[] {"Parser"}, 0, new Object[] {});
-mv.visitVarInsn(ALOAD, 0);
-mv.visitMethodInsn(INVOKEVIRTUAL, "Parser", "Prefix", "()Z");
-Label l1 = new Label();
-mv.visitJumpInsn(IFEQ, l1);
-mv.visitJumpInsn(GOTO, l0);
-mv.visitLabel(l1);
-mv.visitFrame(Opcodes.F_NEW, 1, new Object[] {"Parser"}, 0, new Object[] {});
-mv.visitInsn(ICONST_1);
-mv.visitInsn(IRETURN);
-Label l2 = new Label();
-mv.visitLabel(l2);
-mv.visitLocalVariable("this", "LParser;", null, l0, l2, 0);
-mv.visitMaxs(1, 1);
-mv.visitEnd();
-}
+// {
+// mv = cw.visitMethod(0, "Sequence_Any", "()Z", null, null);
+// mv.visitCode();
+// Label l0 = new Label();
+// mv.visitLabel(l0);
+// mv.visitLineNumber(24, l0);
+// mv.visitFrame(Opcodes.F_NEW, 1, new Object[] {"Parser"}, 0, new Object[] {});
+// mv.visitVarInsn(ALOAD, 0);
+// mv.visitMethodInsn(INVOKEVIRTUAL, "Parser", "Prefix", "()Z");
+// Label l1 = new Label();
+// mv.visitJumpInsn(IFEQ, l1);
+// mv.visitJumpInsn(GOTO, l0);
+// mv.visitLabel(l1);
+// mv.visitFrame(Opcodes.F_NEW, 1, new Object[] {"Parser"}, 0, new Object[] {});
+// mv.visitInsn(ICONST_1);
+// mv.visitInsn(IRETURN);
+// Label l2 = new Label();
+// mv.visitLabel(l2);
+// mv.visitLocalVariable("this", "LParser;", null, l0, l2, 0);
+// mv.visitMaxs(1, 1);
+// mv.visitEnd();
+// }
 {
 mv = cw.visitMethod(0, "Prefix", "()Z", null, null);
 mv.visitCode();
