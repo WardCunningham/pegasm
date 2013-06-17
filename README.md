@@ -39,6 +39,18 @@ ParserAgent.java rewrites the Parser.java bytecodes to include various instructi
 The compiled agent should be specified on the Parser command line with single character arguments
 to enable specific debugging.
 
+Building
+========
+
+Build the source with the following command line: 
+
+javac -cp asm-util-4.1.jar:asm-4.1.jar *.java
+
+Substitute the ':' above for '\' on a Windows platform.
+
+Assumes the ASM libraries are in the same folder as source.
+
+
 Example
 =======
 
