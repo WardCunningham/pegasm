@@ -1,0 +1,40 @@
+pegasm
+======
+
+PEG parser aspiring to be as fast as Pegleg and as convenient as Treetop
+
+Ian Pumarta's compile to c parser generator gets its speed from avoiding malocs except to double
+its big buffer when it runs out of space. Everything else is done with range pointers into this buffer.
+
+Pivotal Lab's Treetop generates ruby code that runs in the dynamic ruby environment. This makes it easy
+to build trees and process them with a wide array of convenient data structures.
+
+Pegasm can have the best of both. This will be valuable for Exploratory Parsing where many productions
+only to keep track of where one is in the semi-structured input. As we find items of interest we can
+afford to allocate storage to keep track of them.
+
+Architecture
+============
+
+We'll read a PEG grammar and build the corresponding parser in memory using the ASM java bytecode
+abstraction. We'll annotate this with additional passes of ASM to insert parser tracing code. Still
+more passes will insert semantic actions.
+
+Large datasets are often broken into collections of large files. We'll fork concurrent processes to
+parse these concurrently.
+
+We'll provide a web interface to the running parsers using the Federated Wiki "Laboratory" protocol.
+See http://lab.fed.wiki.org
+
+Components
+==========
+
+Pegasm.java provides the abstract parser along with a main program and io utilities.
+
+Parser.java is a handcrafted translation of the published PEG grammar [Ford 2004].
+Some productions require helper methods to handle the early exits of some PEG forms. The ASM versions
+will inline these into single methods. The parser reports "done, match" upon a successul parse.
+
+ParserAgent.java rewrites the Parser.java bytecodes to include various instruction level debugging. 
+The compiled agent should be specified on the Parser command line with single character arguments
+to enable specific debugging.
