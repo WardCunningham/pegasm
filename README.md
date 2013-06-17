@@ -29,13 +29,16 @@ See http://lab.fed.wiki.org
 Components
 ==========
 
-Pegasm.java provides the abstract parser along with a main program and io utilities.
+[Pegasm.java](https://github.com/WardCunningham/pegasm/blob/master/Pegasm.java)
+provides the abstract parser along with a main program and io utilities.
 
-Parser.java is a handcrafted translation of the published PEG grammar [Ford 2004].
+[Parser.java](https://github.com/WardCunningham/pegasm/blob/master/Parser.java)
+is a handcrafted translation of the published PEG grammar [Ford 2004].
 Some productions require helper methods to handle the early exits of some PEG forms. The ASM versions
 will inline these into single methods. The parser reports "done, match" upon a successul parse.
 
-ParserAgent.java rewrites the Parser.java bytecodes to include various instruction level debugging. 
+[ParserAgent.java](https://github.com/WardCunningham/pegasm/blob/master/ParserAgent.java)
+rewrites the Parser.java bytecodes to include various instruction level debugging. 
 The compiled agent should be specified on the Parser command line with single character arguments
 to enable specific debugging.
 
@@ -46,6 +49,15 @@ We test pegasm on the published PEG grammar.
 See [Grammar.peg](https://github.com/WardCunningham/pegasm/blob/master/Grammar.peg).
 
 It can be instructive to watch the grammar parse itself.
-See [good](https://github.com/WardCunningham/pegasm/blob/master/good) for a trace of 
+See text file [good](https://github.com/WardCunningham/pegasm/blob/master/good) for a trace of 
 Parser.java productions as they parse Grammar.peg. By convention "private" productions
 aren't shown in the trace. We use this the skip lots of boring whitespace processing.
+
+The trace shows the current line being parsed as each production rule is evaluated. The
+position where matches are attempted is shown by inserted text such as `{Primary-79}`.
+This says that the parser is attempting to match production `Primary` at characterer `79`
+of the imput text.
+
+If the position of the next match is further into the input that is 
+a sure sign that the previous matched, at least partially. PEG parser can backtrack 
+for considerable distance though production coding conventions try to minimize this.
