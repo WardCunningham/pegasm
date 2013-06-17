@@ -1,0 +1,2132 @@
+ {Grammar-0} # Hierarchical syntax
+ {Comment-0} # Hierarchical syntax
+ {Comment-22} # http://bford.info/pub/lang/peg.pdf
+ {Comment-60} Grammar <- Spacing Definition+ EndOfFile
+ {Definition-60} Grammar <- Spacing Definition+ EndOfFile
+ {Identifier-60} Grammar <- Spacing Definition+ EndOfFile
+Grammar  {Comment-68} <- Spacing Definition+ EndOfFile
+Grammar  {LEFTARROW-68} <- Spacing Definition+ EndOfFile
+Grammar <-  {Comment-71} Spacing Definition+ EndOfFile
+Grammar <-  {Expression-71} Spacing Definition+ EndOfFile
+Grammar <-  {Sequence-71} Spacing Definition+ EndOfFile
+Grammar <-  {Prefix-71} Spacing Definition+ EndOfFile
+Grammar <-  {AND-71} Spacing Definition+ EndOfFile
+Grammar <-  {NOT-71} Spacing Definition+ EndOfFile
+Grammar <-  {Suffix-71} Spacing Definition+ EndOfFile
+Grammar <-  {Primary-71} Spacing Definition+ EndOfFile
+Grammar <-  {Identifier-71} Spacing Definition+ EndOfFile
+Grammar <- Spacing  {Comment-79} Definition+ EndOfFile
+Grammar <- Spacing  {LEFTARROW-79} Definition+ EndOfFile
+Grammar <- Spacing  {QUESTION-79} Definition+ EndOfFile
+Grammar <- Spacing  {STAR-79} Definition+ EndOfFile
+Grammar <- Spacing  {PLUS-79} Definition+ EndOfFile
+Grammar <- Spacing  {Prefix-79} Definition+ EndOfFile
+Grammar <- Spacing  {AND-79} Definition+ EndOfFile
+Grammar <- Spacing  {NOT-79} Definition+ EndOfFile
+Grammar <- Spacing  {Suffix-79} Definition+ EndOfFile
+Grammar <- Spacing  {Primary-79} Definition+ EndOfFile
+Grammar <- Spacing  {Identifier-79} Definition+ EndOfFile
+Grammar <- Spacing Definition {Comment-89} + EndOfFile
+Grammar <- Spacing Definition {LEFTARROW-89} + EndOfFile
+Grammar <- Spacing Definition {QUESTION-89} + EndOfFile
+Grammar <- Spacing Definition {STAR-89} + EndOfFile
+Grammar <- Spacing Definition {PLUS-89} + EndOfFile
+Grammar <- Spacing Definition+  {Comment-91} EndOfFile
+Grammar <- Spacing Definition+  {Prefix-91} EndOfFile
+Grammar <- Spacing Definition+  {AND-91} EndOfFile
+Grammar <- Spacing Definition+  {NOT-91} EndOfFile
+Grammar <- Spacing Definition+  {Suffix-91} EndOfFile
+Grammar <- Spacing Definition+  {Primary-91} EndOfFile
+Grammar <- Spacing Definition+  {Identifier-91} EndOfFile
+ {Comment-101} Definition <- Identifier LEFTARROW Expression
+ {LEFTARROW-101} Definition <- Identifier LEFTARROW Expression
+ {QUESTION-101} Definition <- Identifier LEFTARROW Expression
+ {STAR-101} Definition <- Identifier LEFTARROW Expression
+ {PLUS-101} Definition <- Identifier LEFTARROW Expression
+ {Prefix-101} Definition <- Identifier LEFTARROW Expression
+ {AND-101} Definition <- Identifier LEFTARROW Expression
+ {NOT-101} Definition <- Identifier LEFTARROW Expression
+ {Suffix-101} Definition <- Identifier LEFTARROW Expression
+ {Primary-101} Definition <- Identifier LEFTARROW Expression
+ {Identifier-101} Definition <- Identifier LEFTARROW Expression
+Definition  {Comment-112} <- Identifier LEFTARROW Expression
+Definition  {LEFTARROW-112} <- Identifier LEFTARROW Expression
+Definition <-  {Comment-115} Identifier LEFTARROW Expression
+ {OPEN-101} Definition <- Identifier LEFTARROW Expression
+ {Literal-101} Definition <- Identifier LEFTARROW Expression
+ {Klass-101} Definition <- Identifier LEFTARROW Expression
+ {DOT-101} Definition <- Identifier LEFTARROW Expression
+ {SLASH-101} Definition <- Identifier LEFTARROW Expression
+ {Definition-101} Definition <- Identifier LEFTARROW Expression
+ {Identifier-101} Definition <- Identifier LEFTARROW Expression
+Definition  {Comment-112} <- Identifier LEFTARROW Expression
+Definition  {LEFTARROW-112} <- Identifier LEFTARROW Expression
+Definition <-  {Comment-115} Identifier LEFTARROW Expression
+Definition <-  {Expression-115} Identifier LEFTARROW Expression
+Definition <-  {Sequence-115} Identifier LEFTARROW Expression
+Definition <-  {Prefix-115} Identifier LEFTARROW Expression
+Definition <-  {AND-115} Identifier LEFTARROW Expression
+Definition <-  {NOT-115} Identifier LEFTARROW Expression
+Definition <-  {Suffix-115} Identifier LEFTARROW Expression
+Definition <-  {Primary-115} Identifier LEFTARROW Expression
+Definition <-  {Identifier-115} Identifier LEFTARROW Expression
+Definition <- Identifier  {Comment-126} LEFTARROW Expression
+Definition <- Identifier  {LEFTARROW-126} LEFTARROW Expression
+Definition <- Identifier  {QUESTION-126} LEFTARROW Expression
+Definition <- Identifier  {STAR-126} LEFTARROW Expression
+Definition <- Identifier  {PLUS-126} LEFTARROW Expression
+Definition <- Identifier  {Prefix-126} LEFTARROW Expression
+Definition <- Identifier  {AND-126} LEFTARROW Expression
+Definition <- Identifier  {NOT-126} LEFTARROW Expression
+Definition <- Identifier  {Suffix-126} LEFTARROW Expression
+Definition <- Identifier  {Primary-126} LEFTARROW Expression
+Definition <- Identifier  {Identifier-126} LEFTARROW Expression
+Definition <- Identifier LEFTARROW  {Comment-136} Expression
+Definition <- Identifier LEFTARROW  {LEFTARROW-136} Expression
+Definition <- Identifier LEFTARROW  {QUESTION-136} Expression
+Definition <- Identifier LEFTARROW  {STAR-136} Expression
+Definition <- Identifier LEFTARROW  {PLUS-136} Expression
+Definition <- Identifier LEFTARROW  {Prefix-136} Expression
+Definition <- Identifier LEFTARROW  {AND-136} Expression
+Definition <- Identifier LEFTARROW  {NOT-136} Expression
+Definition <- Identifier LEFTARROW  {Suffix-136} Expression
+Definition <- Identifier LEFTARROW  {Primary-136} Expression
+Definition <- Identifier LEFTARROW  {Identifier-136} Expression
+ {Comment-147} Expression <- Sequence (SLASH Sequence)*
+ {LEFTARROW-147} Expression <- Sequence (SLASH Sequence)*
+ {QUESTION-147} Expression <- Sequence (SLASH Sequence)*
+ {STAR-147} Expression <- Sequence (SLASH Sequence)*
+ {PLUS-147} Expression <- Sequence (SLASH Sequence)*
+ {Prefix-147} Expression <- Sequence (SLASH Sequence)*
+ {AND-147} Expression <- Sequence (SLASH Sequence)*
+ {NOT-147} Expression <- Sequence (SLASH Sequence)*
+ {Suffix-147} Expression <- Sequence (SLASH Sequence)*
+ {Primary-147} Expression <- Sequence (SLASH Sequence)*
+ {Identifier-147} Expression <- Sequence (SLASH Sequence)*
+Expression  {Comment-158} <- Sequence (SLASH Sequence)*
+Expression  {LEFTARROW-158} <- Sequence (SLASH Sequence)*
+Expression <-  {Comment-161} Sequence (SLASH Sequence)*
+ {OPEN-147} Expression <- Sequence (SLASH Sequence)*
+ {Literal-147} Expression <- Sequence (SLASH Sequence)*
+ {Klass-147} Expression <- Sequence (SLASH Sequence)*
+ {DOT-147} Expression <- Sequence (SLASH Sequence)*
+ {SLASH-147} Expression <- Sequence (SLASH Sequence)*
+ {Definition-147} Expression <- Sequence (SLASH Sequence)*
+ {Identifier-147} Expression <- Sequence (SLASH Sequence)*
+Expression  {Comment-158} <- Sequence (SLASH Sequence)*
+Expression  {LEFTARROW-158} <- Sequence (SLASH Sequence)*
+Expression <-  {Comment-161} Sequence (SLASH Sequence)*
+Expression <-  {Expression-161} Sequence (SLASH Sequence)*
+Expression <-  {Sequence-161} Sequence (SLASH Sequence)*
+Expression <-  {Prefix-161} Sequence (SLASH Sequence)*
+Expression <-  {AND-161} Sequence (SLASH Sequence)*
+Expression <-  {NOT-161} Sequence (SLASH Sequence)*
+Expression <-  {Suffix-161} Sequence (SLASH Sequence)*
+Expression <-  {Primary-161} Sequence (SLASH Sequence)*
+Expression <-  {Identifier-161} Sequence (SLASH Sequence)*
+Expression <- Sequence  {Comment-170} (SLASH Sequence)*
+Expression <- Sequence  {LEFTARROW-170} (SLASH Sequence)*
+Expression <- Sequence  {QUESTION-170} (SLASH Sequence)*
+Expression <- Sequence  {STAR-170} (SLASH Sequence)*
+Expression <- Sequence  {PLUS-170} (SLASH Sequence)*
+Expression <- Sequence  {Prefix-170} (SLASH Sequence)*
+Expression <- Sequence  {AND-170} (SLASH Sequence)*
+Expression <- Sequence  {NOT-170} (SLASH Sequence)*
+Expression <- Sequence  {Suffix-170} (SLASH Sequence)*
+Expression <- Sequence  {Primary-170} (SLASH Sequence)*
+Expression <- Sequence  {Identifier-170} (SLASH Sequence)*
+Expression <- Sequence  {OPEN-170} (SLASH Sequence)*
+Expression <- Sequence ( {Comment-171} SLASH Sequence)*
+Expression <- Sequence ( {Expression-171} SLASH Sequence)*
+Expression <- Sequence ( {Sequence-171} SLASH Sequence)*
+Expression <- Sequence ( {Prefix-171} SLASH Sequence)*
+Expression <- Sequence ( {AND-171} SLASH Sequence)*
+Expression <- Sequence ( {NOT-171} SLASH Sequence)*
+Expression <- Sequence ( {Suffix-171} SLASH Sequence)*
+Expression <- Sequence ( {Primary-171} SLASH Sequence)*
+Expression <- Sequence ( {Identifier-171} SLASH Sequence)*
+Expression <- Sequence (SLASH  {Comment-177} Sequence)*
+Expression <- Sequence (SLASH  {LEFTARROW-177} Sequence)*
+Expression <- Sequence (SLASH  {QUESTION-177} Sequence)*
+Expression <- Sequence (SLASH  {STAR-177} Sequence)*
+Expression <- Sequence (SLASH  {PLUS-177} Sequence)*
+Expression <- Sequence (SLASH  {Prefix-177} Sequence)*
+Expression <- Sequence (SLASH  {AND-177} Sequence)*
+Expression <- Sequence (SLASH  {NOT-177} Sequence)*
+Expression <- Sequence (SLASH  {Suffix-177} Sequence)*
+Expression <- Sequence (SLASH  {Primary-177} Sequence)*
+Expression <- Sequence (SLASH  {Identifier-177} Sequence)*
+Expression <- Sequence (SLASH Sequence {Comment-185} )*
+Expression <- Sequence (SLASH Sequence {LEFTARROW-185} )*
+Expression <- Sequence (SLASH Sequence {QUESTION-185} )*
+Expression <- Sequence (SLASH Sequence {STAR-185} )*
+Expression <- Sequence (SLASH Sequence {PLUS-185} )*
+Expression <- Sequence (SLASH Sequence {Prefix-185} )*
+Expression <- Sequence (SLASH Sequence {AND-185} )*
+Expression <- Sequence (SLASH Sequence {NOT-185} )*
+Expression <- Sequence (SLASH Sequence {Suffix-185} )*
+Expression <- Sequence (SLASH Sequence {Primary-185} )*
+Expression <- Sequence (SLASH Sequence {Identifier-185} )*
+Expression <- Sequence (SLASH Sequence {OPEN-185} )*
+Expression <- Sequence (SLASH Sequence {Literal-185} )*
+Expression <- Sequence (SLASH Sequence {Klass-185} )*
+Expression <- Sequence (SLASH Sequence {DOT-185} )*
+Expression <- Sequence (SLASH Sequence {SLASH-185} )*
+Expression <- Sequence (SLASH Sequence {CLOSE-185} )*
+Expression <- Sequence (SLASH Sequence) {Comment-186} *
+Expression <- Sequence (SLASH Sequence) {QUESTION-186} *
+Expression <- Sequence (SLASH Sequence) {STAR-186} *
+ {Comment-188} Sequence <- Prefix*
+ {Prefix-188} Sequence <- Prefix*
+ {AND-188} Sequence <- Prefix*
+ {NOT-188} Sequence <- Prefix*
+ {Suffix-188} Sequence <- Prefix*
+ {Primary-188} Sequence <- Prefix*
+ {Identifier-188} Sequence <- Prefix*
+Sequence  {Comment-197} <- Prefix*
+Sequence  {LEFTARROW-197} <- Prefix*
+Sequence <-  {Comment-200} Prefix*
+ {OPEN-188} Sequence <- Prefix*
+ {Literal-188} Sequence <- Prefix*
+ {Klass-188} Sequence <- Prefix*
+ {DOT-188} Sequence <- Prefix*
+ {SLASH-188} Sequence <- Prefix*
+ {Definition-188} Sequence <- Prefix*
+ {Identifier-188} Sequence <- Prefix*
+Sequence  {Comment-197} <- Prefix*
+Sequence  {LEFTARROW-197} <- Prefix*
+Sequence <-  {Comment-200} Prefix*
+Sequence <-  {Expression-200} Prefix*
+Sequence <-  {Sequence-200} Prefix*
+Sequence <-  {Prefix-200} Prefix*
+Sequence <-  {AND-200} Prefix*
+Sequence <-  {NOT-200} Prefix*
+Sequence <-  {Suffix-200} Prefix*
+Sequence <-  {Primary-200} Prefix*
+Sequence <-  {Identifier-200} Prefix*
+Sequence <- Prefix {Comment-206} *
+Sequence <- Prefix {LEFTARROW-206} *
+Sequence <- Prefix {QUESTION-206} *
+Sequence <- Prefix {STAR-206} *
+ {Comment-208} Prefix <- (AND / NOT)? Suffix
+ {Prefix-208} Prefix <- (AND / NOT)? Suffix
+ {AND-208} Prefix <- (AND / NOT)? Suffix
+ {NOT-208} Prefix <- (AND / NOT)? Suffix
+ {Suffix-208} Prefix <- (AND / NOT)? Suffix
+ {Primary-208} Prefix <- (AND / NOT)? Suffix
+ {Identifier-208} Prefix <- (AND / NOT)? Suffix
+Prefix  {Comment-215} <- (AND / NOT)? Suffix
+Prefix  {LEFTARROW-215} <- (AND / NOT)? Suffix
+Prefix <-  {Comment-218} (AND / NOT)? Suffix
+ {OPEN-208} Prefix <- (AND / NOT)? Suffix
+ {Literal-208} Prefix <- (AND / NOT)? Suffix
+ {Klass-208} Prefix <- (AND / NOT)? Suffix
+ {DOT-208} Prefix <- (AND / NOT)? Suffix
+ {SLASH-208} Prefix <- (AND / NOT)? Suffix
+ {Definition-208} Prefix <- (AND / NOT)? Suffix
+ {Identifier-208} Prefix <- (AND / NOT)? Suffix
+Prefix  {Comment-215} <- (AND / NOT)? Suffix
+Prefix  {LEFTARROW-215} <- (AND / NOT)? Suffix
+Prefix <-  {Comment-218} (AND / NOT)? Suffix
+Prefix <-  {Expression-218} (AND / NOT)? Suffix
+Prefix <-  {Sequence-218} (AND / NOT)? Suffix
+Prefix <-  {Prefix-218} (AND / NOT)? Suffix
+Prefix <-  {AND-218} (AND / NOT)? Suffix
+Prefix <-  {NOT-218} (AND / NOT)? Suffix
+Prefix <-  {Suffix-218} (AND / NOT)? Suffix
+Prefix <-  {Primary-218} (AND / NOT)? Suffix
+Prefix <-  {Identifier-218} (AND / NOT)? Suffix
+Prefix <-  {OPEN-218} (AND / NOT)? Suffix
+Prefix <- ( {Comment-219} AND / NOT)? Suffix
+Prefix <- ( {Expression-219} AND / NOT)? Suffix
+Prefix <- ( {Sequence-219} AND / NOT)? Suffix
+Prefix <- ( {Prefix-219} AND / NOT)? Suffix
+Prefix <- ( {AND-219} AND / NOT)? Suffix
+Prefix <- ( {NOT-219} AND / NOT)? Suffix
+Prefix <- ( {Suffix-219} AND / NOT)? Suffix
+Prefix <- ( {Primary-219} AND / NOT)? Suffix
+Prefix <- ( {Identifier-219} AND / NOT)? Suffix
+Prefix <- (AND  {Comment-223} / NOT)? Suffix
+Prefix <- (AND  {LEFTARROW-223} / NOT)? Suffix
+Prefix <- (AND  {QUESTION-223} / NOT)? Suffix
+Prefix <- (AND  {STAR-223} / NOT)? Suffix
+Prefix <- (AND  {PLUS-223} / NOT)? Suffix
+Prefix <- (AND  {Prefix-223} / NOT)? Suffix
+Prefix <- (AND  {AND-223} / NOT)? Suffix
+Prefix <- (AND  {NOT-223} / NOT)? Suffix
+Prefix <- (AND  {Suffix-223} / NOT)? Suffix
+Prefix <- (AND  {Primary-223} / NOT)? Suffix
+Prefix <- (AND  {Identifier-223} / NOT)? Suffix
+Prefix <- (AND  {OPEN-223} / NOT)? Suffix
+Prefix <- (AND  {Literal-223} / NOT)? Suffix
+Prefix <- (AND  {Klass-223} / NOT)? Suffix
+Prefix <- (AND  {DOT-223} / NOT)? Suffix
+Prefix <- (AND  {SLASH-223} / NOT)? Suffix
+Prefix <- (AND /  {Comment-225} NOT)? Suffix
+Prefix <- (AND /  {Sequence-225} NOT)? Suffix
+Prefix <- (AND /  {Prefix-225} NOT)? Suffix
+Prefix <- (AND /  {AND-225} NOT)? Suffix
+Prefix <- (AND /  {NOT-225} NOT)? Suffix
+Prefix <- (AND /  {Suffix-225} NOT)? Suffix
+Prefix <- (AND /  {Primary-225} NOT)? Suffix
+Prefix <- (AND /  {Identifier-225} NOT)? Suffix
+Prefix <- (AND / NOT {Comment-228} )? Suffix
+Prefix <- (AND / NOT {LEFTARROW-228} )? Suffix
+Prefix <- (AND / NOT {QUESTION-228} )? Suffix
+Prefix <- (AND / NOT {STAR-228} )? Suffix
+Prefix <- (AND / NOT {PLUS-228} )? Suffix
+Prefix <- (AND / NOT {Prefix-228} )? Suffix
+Prefix <- (AND / NOT {AND-228} )? Suffix
+Prefix <- (AND / NOT {NOT-228} )? Suffix
+Prefix <- (AND / NOT {Suffix-228} )? Suffix
+Prefix <- (AND / NOT {Primary-228} )? Suffix
+Prefix <- (AND / NOT {Identifier-228} )? Suffix
+Prefix <- (AND / NOT {OPEN-228} )? Suffix
+Prefix <- (AND / NOT {Literal-228} )? Suffix
+Prefix <- (AND / NOT {Klass-228} )? Suffix
+Prefix <- (AND / NOT {DOT-228} )? Suffix
+Prefix <- (AND / NOT {SLASH-228} )? Suffix
+Prefix <- (AND / NOT {CLOSE-228} )? Suffix
+Prefix <- (AND / NOT) {Comment-229} ? Suffix
+Prefix <- (AND / NOT) {QUESTION-229} ? Suffix
+Prefix <- (AND / NOT)?  {Comment-231} Suffix
+Prefix <- (AND / NOT)?  {Prefix-231} Suffix
+Prefix <- (AND / NOT)?  {AND-231} Suffix
+Prefix <- (AND / NOT)?  {NOT-231} Suffix
+Prefix <- (AND / NOT)?  {Suffix-231} Suffix
+Prefix <- (AND / NOT)?  {Primary-231} Suffix
+Prefix <- (AND / NOT)?  {Identifier-231} Suffix
+ {Comment-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {LEFTARROW-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {QUESTION-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {STAR-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {PLUS-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {Prefix-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {AND-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {NOT-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {Suffix-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {Primary-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {Identifier-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+Suffix  {Comment-245} <- Primary (QUESTION / STAR / PLUS)?
+Suffix  {LEFTARROW-245} <- Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {Comment-248} Primary (QUESTION / STAR / PLUS)?
+ {OPEN-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {Literal-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {Klass-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {DOT-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {SLASH-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {Definition-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+ {Identifier-238} Suffix <- Primary (QUESTION / STAR / PLUS)?
+Suffix  {Comment-245} <- Primary (QUESTION / STAR / PLUS)?
+Suffix  {LEFTARROW-245} <- Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {Comment-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {Expression-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {Sequence-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {Prefix-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {AND-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {NOT-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {Suffix-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {Primary-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <-  {Identifier-248} Primary (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {Comment-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {LEFTARROW-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {QUESTION-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {STAR-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {PLUS-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {Prefix-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {AND-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {NOT-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {Suffix-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {Primary-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {Identifier-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary  {OPEN-256} (QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {Comment-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {Expression-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {Sequence-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {Prefix-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {AND-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {NOT-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {Suffix-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {Primary-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary ( {Identifier-257} QUESTION / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {Comment-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {LEFTARROW-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {QUESTION-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {STAR-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {PLUS-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {Prefix-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {AND-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {NOT-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {Suffix-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {Primary-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {Identifier-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {OPEN-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {Literal-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {Klass-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {DOT-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION  {SLASH-266} / STAR / PLUS)?
+Suffix <- Primary (QUESTION /  {Comment-268} STAR / PLUS)?
+Suffix <- Primary (QUESTION /  {Sequence-268} STAR / PLUS)?
+Suffix <- Primary (QUESTION /  {Prefix-268} STAR / PLUS)?
+Suffix <- Primary (QUESTION /  {AND-268} STAR / PLUS)?
+Suffix <- Primary (QUESTION /  {NOT-268} STAR / PLUS)?
+Suffix <- Primary (QUESTION /  {Suffix-268} STAR / PLUS)?
+Suffix <- Primary (QUESTION /  {Primary-268} STAR / PLUS)?
+Suffix <- Primary (QUESTION /  {Identifier-268} STAR / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {Comment-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {LEFTARROW-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {QUESTION-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {STAR-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {PLUS-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {Prefix-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {AND-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {NOT-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {Suffix-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {Primary-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {Identifier-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {OPEN-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {Literal-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {Klass-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {DOT-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR  {SLASH-273} / PLUS)?
+Suffix <- Primary (QUESTION / STAR /  {Comment-275} PLUS)?
+Suffix <- Primary (QUESTION / STAR /  {Sequence-275} PLUS)?
+Suffix <- Primary (QUESTION / STAR /  {Prefix-275} PLUS)?
+Suffix <- Primary (QUESTION / STAR /  {AND-275} PLUS)?
+Suffix <- Primary (QUESTION / STAR /  {NOT-275} PLUS)?
+Suffix <- Primary (QUESTION / STAR /  {Suffix-275} PLUS)?
+Suffix <- Primary (QUESTION / STAR /  {Primary-275} PLUS)?
+Suffix <- Primary (QUESTION / STAR /  {Identifier-275} PLUS)?
+Suffix <- Primary (QUESTION / STAR / PLUS {Comment-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {LEFTARROW-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {QUESTION-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {STAR-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {PLUS-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {Prefix-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {AND-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {NOT-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {Suffix-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {Primary-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {Identifier-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {OPEN-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {Literal-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {Klass-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {DOT-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {SLASH-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS {CLOSE-279} )?
+Suffix <- Primary (QUESTION / STAR / PLUS) {Comment-280} ?
+Suffix <- Primary (QUESTION / STAR / PLUS) {QUESTION-280} ?
+ {Comment-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {Prefix-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {AND-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {NOT-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {Suffix-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {Primary-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {Identifier-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary  {Comment-290} <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary  {LEFTARROW-290} <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {Comment-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {OPEN-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {Literal-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {Klass-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {DOT-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {SLASH-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {Definition-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+ {Identifier-282} Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary  {Comment-290} <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary  {LEFTARROW-290} <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {Comment-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {Expression-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {Sequence-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {Prefix-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {AND-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {NOT-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {Suffix-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {Primary-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <-  {Identifier-293} Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier  {Comment-304} !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier  {LEFTARROW-304} !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier  {QUESTION-304} !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier  {STAR-304} !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier  {PLUS-304} !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier  {Prefix-304} !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier  {AND-304} !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier  {NOT-304} !LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier ! {Comment-305} LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier ! {Suffix-305} LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier ! {Primary-305} LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier ! {Identifier-305} LEFTARROW / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {Comment-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {LEFTARROW-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {QUESTION-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {STAR-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {PLUS-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {Prefix-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {AND-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {NOT-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {Suffix-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {Primary-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {Identifier-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {OPEN-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {Literal-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {Klass-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {DOT-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW  {SLASH-315} / OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW /  {Comment-317} OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW /  {Sequence-317} OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW /  {Prefix-317} OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW /  {AND-317} OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW /  {NOT-317} OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW /  {Suffix-317} OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW /  {Primary-317} OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW /  {Identifier-317} OPEN Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {Comment-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {LEFTARROW-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {QUESTION-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {STAR-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {PLUS-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {Prefix-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {AND-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {NOT-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {Suffix-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {Primary-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN  {Identifier-322} Expression CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {Comment-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {LEFTARROW-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {QUESTION-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {STAR-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {PLUS-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {Prefix-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {AND-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {NOT-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {Suffix-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {Primary-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression  {Identifier-333} CLOSE / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {Comment-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {LEFTARROW-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {QUESTION-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {STAR-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {PLUS-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {Prefix-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {AND-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {NOT-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {Suffix-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {Primary-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {Identifier-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {OPEN-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {Literal-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {Klass-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {DOT-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE  {SLASH-339} / Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE /  {Comment-341} Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE /  {Sequence-341} Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE /  {Prefix-341} Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE /  {AND-341} Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE /  {NOT-341} Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE /  {Suffix-341} Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE /  {Primary-341} Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE /  {Identifier-341} Literal / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {Comment-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {LEFTARROW-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {QUESTION-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {STAR-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {PLUS-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {Prefix-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {AND-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {NOT-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {Suffix-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {Primary-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {Identifier-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {OPEN-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {Literal-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {Klass-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {DOT-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal  {SLASH-349} / Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal /  {Comment-351} Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal /  {Sequence-351} Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal /  {Prefix-351} Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal /  {AND-351} Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal /  {NOT-351} Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal /  {Suffix-351} Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal /  {Primary-351} Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal /  {Identifier-351} Class / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {Comment-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {LEFTARROW-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {QUESTION-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {STAR-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {PLUS-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {Prefix-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {AND-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {NOT-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {Suffix-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {Primary-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {Identifier-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {OPEN-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {Literal-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {Klass-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {DOT-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class  {SLASH-357} / DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class /  {Comment-359} DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class /  {Sequence-359} DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class /  {Prefix-359} DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class /  {AND-359} DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class /  {NOT-359} DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class /  {Suffix-359} DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class /  {Primary-359} DOT
+Primary <- Identifier !LEFTARROW / OPEN Expression CLOSE / Literal / Class /  {Identifier-359} DOT
+ {Comment-364} # Lexical syntax
+ {Comment-382} Identifier <- IdentStart IdentCont* Spacing
+ {LEFTARROW-382} Identifier <- IdentStart IdentCont* Spacing
+ {QUESTION-382} Identifier <- IdentStart IdentCont* Spacing
+ {STAR-382} Identifier <- IdentStart IdentCont* Spacing
+ {PLUS-382} Identifier <- IdentStart IdentCont* Spacing
+ {Prefix-382} Identifier <- IdentStart IdentCont* Spacing
+ {AND-382} Identifier <- IdentStart IdentCont* Spacing
+ {NOT-382} Identifier <- IdentStart IdentCont* Spacing
+ {Suffix-382} Identifier <- IdentStart IdentCont* Spacing
+ {Primary-382} Identifier <- IdentStart IdentCont* Spacing
+ {Identifier-382} Identifier <- IdentStart IdentCont* Spacing
+Identifier  {Comment-393} <- IdentStart IdentCont* Spacing
+Identifier  {LEFTARROW-393} <- IdentStart IdentCont* Spacing
+Identifier <-  {Comment-396} IdentStart IdentCont* Spacing
+ {OPEN-382} Identifier <- IdentStart IdentCont* Spacing
+ {Literal-382} Identifier <- IdentStart IdentCont* Spacing
+ {Klass-382} Identifier <- IdentStart IdentCont* Spacing
+ {DOT-382} Identifier <- IdentStart IdentCont* Spacing
+ {SLASH-382} Identifier <- IdentStart IdentCont* Spacing
+ {Definition-382} Identifier <- IdentStart IdentCont* Spacing
+ {Identifier-382} Identifier <- IdentStart IdentCont* Spacing
+Identifier  {Comment-393} <- IdentStart IdentCont* Spacing
+Identifier  {LEFTARROW-393} <- IdentStart IdentCont* Spacing
+Identifier <-  {Comment-396} IdentStart IdentCont* Spacing
+Identifier <-  {Expression-396} IdentStart IdentCont* Spacing
+Identifier <-  {Sequence-396} IdentStart IdentCont* Spacing
+Identifier <-  {Prefix-396} IdentStart IdentCont* Spacing
+Identifier <-  {AND-396} IdentStart IdentCont* Spacing
+Identifier <-  {NOT-396} IdentStart IdentCont* Spacing
+Identifier <-  {Suffix-396} IdentStart IdentCont* Spacing
+Identifier <-  {Primary-396} IdentStart IdentCont* Spacing
+Identifier <-  {Identifier-396} IdentStart IdentCont* Spacing
+Identifier <- IdentStart  {Comment-407} IdentCont* Spacing
+Identifier <- IdentStart  {LEFTARROW-407} IdentCont* Spacing
+Identifier <- IdentStart  {QUESTION-407} IdentCont* Spacing
+Identifier <- IdentStart  {STAR-407} IdentCont* Spacing
+Identifier <- IdentStart  {PLUS-407} IdentCont* Spacing
+Identifier <- IdentStart  {Prefix-407} IdentCont* Spacing
+Identifier <- IdentStart  {AND-407} IdentCont* Spacing
+Identifier <- IdentStart  {NOT-407} IdentCont* Spacing
+Identifier <- IdentStart  {Suffix-407} IdentCont* Spacing
+Identifier <- IdentStart  {Primary-407} IdentCont* Spacing
+Identifier <- IdentStart  {Identifier-407} IdentCont* Spacing
+Identifier <- IdentStart IdentCont {Comment-416} * Spacing
+Identifier <- IdentStart IdentCont {LEFTARROW-416} * Spacing
+Identifier <- IdentStart IdentCont {QUESTION-416} * Spacing
+Identifier <- IdentStart IdentCont {STAR-416} * Spacing
+Identifier <- IdentStart IdentCont*  {Comment-418} Spacing
+Identifier <- IdentStart IdentCont*  {Prefix-418} Spacing
+Identifier <- IdentStart IdentCont*  {AND-418} Spacing
+Identifier <- IdentStart IdentCont*  {NOT-418} Spacing
+Identifier <- IdentStart IdentCont*  {Suffix-418} Spacing
+Identifier <- IdentStart IdentCont*  {Primary-418} Spacing
+Identifier <- IdentStart IdentCont*  {Identifier-418} Spacing
+ {Comment-426} IdentStart <- [a-zA-Z_]
+ {LEFTARROW-426} IdentStart <- [a-zA-Z_]
+ {QUESTION-426} IdentStart <- [a-zA-Z_]
+ {STAR-426} IdentStart <- [a-zA-Z_]
+ {PLUS-426} IdentStart <- [a-zA-Z_]
+ {Prefix-426} IdentStart <- [a-zA-Z_]
+ {AND-426} IdentStart <- [a-zA-Z_]
+ {NOT-426} IdentStart <- [a-zA-Z_]
+ {Suffix-426} IdentStart <- [a-zA-Z_]
+ {Primary-426} IdentStart <- [a-zA-Z_]
+ {Identifier-426} IdentStart <- [a-zA-Z_]
+IdentStart  {Comment-437} <- [a-zA-Z_]
+IdentStart  {LEFTARROW-437} <- [a-zA-Z_]
+IdentStart <-  {Comment-440} [a-zA-Z_]
+ {OPEN-426} IdentStart <- [a-zA-Z_]
+ {Literal-426} IdentStart <- [a-zA-Z_]
+ {Klass-426} IdentStart <- [a-zA-Z_]
+ {DOT-426} IdentStart <- [a-zA-Z_]
+ {SLASH-426} IdentStart <- [a-zA-Z_]
+ {Definition-426} IdentStart <- [a-zA-Z_]
+ {Identifier-426} IdentStart <- [a-zA-Z_]
+IdentStart  {Comment-437} <- [a-zA-Z_]
+IdentStart  {LEFTARROW-437} <- [a-zA-Z_]
+IdentStart <-  {Comment-440} [a-zA-Z_]
+IdentStart <-  {Expression-440} [a-zA-Z_]
+IdentStart <-  {Sequence-440} [a-zA-Z_]
+IdentStart <-  {Prefix-440} [a-zA-Z_]
+IdentStart <-  {AND-440} [a-zA-Z_]
+IdentStart <-  {NOT-440} [a-zA-Z_]
+IdentStart <-  {Suffix-440} [a-zA-Z_]
+IdentStart <-  {Primary-440} [a-zA-Z_]
+IdentStart <-  {Identifier-440} [a-zA-Z_]
+IdentStart <-  {OPEN-440} [a-zA-Z_]
+IdentStart <-  {Literal-440} [a-zA-Z_]
+IdentStart <-  {Klass-440} [a-zA-Z_]
+IdentStart <- [ {Range-441} a-zA-Z_]
+IdentStart <- [ {Char-441} a-zA-Z_]
+IdentStart <- [a- {Char-443} zA-Z_]
+IdentStart <- [a-z {Range-444} A-Z_]
+IdentStart <- [a-z {Char-444} A-Z_]
+IdentStart <- [a-zA- {Char-446} Z_]
+IdentStart <- [a-zA-Z {Range-447} _]
+IdentStart <- [a-zA-Z {Char-447} _]
+IdentStart <- [a-zA-Z_ {Char-448} ]
+IdentStart <- [a-zA-Z_] {Range-449} 
+IdentStart <- [a-zA-Z_] {Char-449} 
+ {Char-450} IdentCont <- IdentStart / [0-9]
+I {Range-451} dentCont <- IdentStart / [0-9]
+I {Char-451} dentCont <- IdentStart / [0-9]
+Id {Char-452} entCont <- IdentStart / [0-9]
+Ide {Range-453} ntCont <- IdentStart / [0-9]
+Ide {Char-453} ntCont <- IdentStart / [0-9]
+Iden {Char-454} tCont <- IdentStart / [0-9]
+Ident {Range-455} Cont <- IdentStart / [0-9]
+Ident {Char-455} Cont <- IdentStart / [0-9]
+IdentC {Char-456} ont <- IdentStart / [0-9]
+IdentCo {Range-457} nt <- IdentStart / [0-9]
+IdentCo {Char-457} nt <- IdentStart / [0-9]
+IdentCon {Char-458} t <- IdentStart / [0-9]
+IdentCont {Range-459}  <- IdentStart / [0-9]
+IdentCont {Char-459}  <- IdentStart / [0-9]
+IdentCont  {Char-460} <- IdentStart / [0-9]
+IdentCont < {Range-461} - IdentStart / [0-9]
+IdentCont < {Char-461} - IdentStart / [0-9]
+IdentCont <- {Char-462}  IdentStart / [0-9]
+IdentCont <-  {Range-463} IdentStart / [0-9]
+IdentCont <-  {Char-463} IdentStart / [0-9]
+IdentCont <- I {Char-464} dentStart / [0-9]
+IdentCont <- Id {Range-465} entStart / [0-9]
+IdentCont <- Id {Char-465} entStart / [0-9]
+IdentCont <- Ide {Char-466} ntStart / [0-9]
+IdentCont <- Iden {Range-467} tStart / [0-9]
+IdentCont <- Iden {Char-467} tStart / [0-9]
+IdentCont <- Ident {Char-468} Start / [0-9]
+IdentCont <- IdentS {Range-469} tart / [0-9]
+IdentCont <- IdentS {Char-469} tart / [0-9]
+IdentCont <- IdentSt {Char-470} art / [0-9]
+IdentCont <- IdentSta {Range-471} rt / [0-9]
+IdentCont <- IdentSta {Char-471} rt / [0-9]
+IdentCont <- IdentStar {Char-472} t / [0-9]
+IdentCont <- IdentStart {Range-473}  / [0-9]
+IdentCont <- IdentStart {Char-473}  / [0-9]
+IdentCont <- IdentStart  {Char-474} / [0-9]
+IdentCont <- IdentStart / {Range-475}  [0-9]
+IdentCont <- IdentStart / {Char-475}  [0-9]
+IdentCont <- IdentStart /  {Char-476} [0-9]
+IdentCont <- IdentStart / [ {Range-477} 0-9]
+IdentCont <- IdentStart / [ {Char-477} 0-9]
+IdentCont <- IdentStart / [0- {Char-479} 9]
+ {Comment-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {QUESTION-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {STAR-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {PLUS-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {Prefix-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {AND-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {NOT-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {Suffix-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {Primary-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {Identifier-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal  {Comment-490} <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal  {LEFTARROW-490} <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Comment-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {OPEN-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {Literal-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {Klass-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {DOT-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {SLASH-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {Definition-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+ {Identifier-482} Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal  {Comment-490} <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal  {LEFTARROW-490} <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Comment-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Expression-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Sequence-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Prefix-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {AND-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {NOT-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Suffix-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Primary-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Identifier-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {OPEN-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Literal-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <-  {Klass-493} ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- [ {Range-494} '] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- [ {Char-494} '] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- [' {Char-495} ] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] {Range-496}  (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] {Char-496}  (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- [']  {Char-497} (!['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] ( {Range-498} !['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] ( {Char-498} !['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (! {Char-499} ['] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (![ {Range-500} '] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (![ {Char-500} '] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (![' {Char-501} ] Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] {Range-502}  Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] {Char-502}  Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (![']  {Char-503} Char)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] C {Range-504} har)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] C {Char-504} har)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Ch {Char-505} ar)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Cha {Range-506} r)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Cha {Char-506} r)* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char {Char-507} )* ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char) {Range-508} * ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char) {Char-508} * ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* {Char-509}  ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)*  {Range-510} ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)*  {Char-510} ['] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [ {Char-511} '] Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {Comment-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {QUESTION-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {STAR-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {PLUS-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {Prefix-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {AND-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {NOT-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {Suffix-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {Primary-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* [']  {Identifier-514} Spacing / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {Comment-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {LEFTARROW-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {QUESTION-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {STAR-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {PLUS-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {Prefix-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {AND-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {NOT-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {Suffix-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {Primary-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {Identifier-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {OPEN-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {Literal-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {Klass-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {DOT-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing  {SLASH-522} / ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {Comment-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {Sequence-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {Prefix-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {AND-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {NOT-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {Suffix-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {Primary-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {Identifier-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {OPEN-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {Literal-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing /  {Klass-524} ["] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / [ {Range-525} "] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / [ {Char-525} "] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / [" {Char-526} ] (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] {Range-527}  (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] {Char-527}  (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["]  {Char-528} (!["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] ( {Range-529} !["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] ( {Char-529} !["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (! {Char-530} ["] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (![ {Range-531} "] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (![ {Char-531} "] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (![" {Char-532} ] Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] {Range-533}  Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] {Char-533}  Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["]  {Char-534} Char)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] C {Range-535} har)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] C {Char-535} har)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Ch {Char-536} ar)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Cha {Range-537} r)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Cha {Char-537} r)* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char {Char-538} )* ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char) {Range-539} * ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char) {Char-539} * ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* {Char-540}  ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)*  {Range-541} ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)*  {Char-541} ["] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* [ {Char-542} "] Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {Comment-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {QUESTION-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {STAR-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {PLUS-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {Prefix-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {AND-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {NOT-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {Suffix-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {Primary-545} Spacing
+Literal <- ['] (!['] Char)* ['] Spacing / ["] (!["] Char)* ["]  {Identifier-545} Spacing
+ {Comment-553} Class <- '[' (!']' Range)* ']' Spacing
+ {LEFTARROW-553} Class <- '[' (!']' Range)* ']' Spacing
+ {QUESTION-553} Class <- '[' (!']' Range)* ']' Spacing
+ {STAR-553} Class <- '[' (!']' Range)* ']' Spacing
+ {PLUS-553} Class <- '[' (!']' Range)* ']' Spacing
+ {Prefix-553} Class <- '[' (!']' Range)* ']' Spacing
+ {AND-553} Class <- '[' (!']' Range)* ']' Spacing
+ {NOT-553} Class <- '[' (!']' Range)* ']' Spacing
+ {Suffix-553} Class <- '[' (!']' Range)* ']' Spacing
+ {Primary-553} Class <- '[' (!']' Range)* ']' Spacing
+ {Identifier-553} Class <- '[' (!']' Range)* ']' Spacing
+Class  {Comment-559} <- '[' (!']' Range)* ']' Spacing
+Class  {LEFTARROW-559} <- '[' (!']' Range)* ']' Spacing
+Class <-  {Comment-562} '[' (!']' Range)* ']' Spacing
+ {OPEN-553} Class <- '[' (!']' Range)* ']' Spacing
+ {Literal-553} Class <- '[' (!']' Range)* ']' Spacing
+ {Klass-553} Class <- '[' (!']' Range)* ']' Spacing
+ {DOT-553} Class <- '[' (!']' Range)* ']' Spacing
+ {SLASH-553} Class <- '[' (!']' Range)* ']' Spacing
+ {Definition-553} Class <- '[' (!']' Range)* ']' Spacing
+ {Identifier-553} Class <- '[' (!']' Range)* ']' Spacing
+Class  {Comment-559} <- '[' (!']' Range)* ']' Spacing
+Class  {LEFTARROW-559} <- '[' (!']' Range)* ']' Spacing
+Class <-  {Comment-562} '[' (!']' Range)* ']' Spacing
+Class <-  {Expression-562} '[' (!']' Range)* ']' Spacing
+Class <-  {Sequence-562} '[' (!']' Range)* ']' Spacing
+Class <-  {Prefix-562} '[' (!']' Range)* ']' Spacing
+Class <-  {AND-562} '[' (!']' Range)* ']' Spacing
+Class <-  {NOT-562} '[' (!']' Range)* ']' Spacing
+Class <-  {Suffix-562} '[' (!']' Range)* ']' Spacing
+Class <-  {Primary-562} '[' (!']' Range)* ']' Spacing
+Class <-  {Identifier-562} '[' (!']' Range)* ']' Spacing
+Class <-  {OPEN-562} '[' (!']' Range)* ']' Spacing
+Class <-  {Literal-562} '[' (!']' Range)* ']' Spacing
+Class <- ' {Char-563} [' (!']' Range)* ']' Spacing
+Class <- '['  {Comment-566} (!']' Range)* ']' Spacing
+Class <- '['  {QUESTION-566} (!']' Range)* ']' Spacing
+Class <- '['  {STAR-566} (!']' Range)* ']' Spacing
+Class <- '['  {PLUS-566} (!']' Range)* ']' Spacing
+Class <- '['  {Prefix-566} (!']' Range)* ']' Spacing
+Class <- '['  {AND-566} (!']' Range)* ']' Spacing
+Class <- '['  {NOT-566} (!']' Range)* ']' Spacing
+Class <- '['  {Suffix-566} (!']' Range)* ']' Spacing
+Class <- '['  {Primary-566} (!']' Range)* ']' Spacing
+Class <- '['  {Identifier-566} (!']' Range)* ']' Spacing
+Class <- '['  {OPEN-566} (!']' Range)* ']' Spacing
+Class <- '[' ( {Comment-567} !']' Range)* ']' Spacing
+Class <- '[' ( {Expression-567} !']' Range)* ']' Spacing
+Class <- '[' ( {Sequence-567} !']' Range)* ']' Spacing
+Class <- '[' ( {Prefix-567} !']' Range)* ']' Spacing
+Class <- '[' ( {AND-567} !']' Range)* ']' Spacing
+Class <- '[' ( {NOT-567} !']' Range)* ']' Spacing
+Class <- '[' (! {Comment-568} ']' Range)* ']' Spacing
+Class <- '[' (! {Suffix-568} ']' Range)* ']' Spacing
+Class <- '[' (! {Primary-568} ']' Range)* ']' Spacing
+Class <- '[' (! {Identifier-568} ']' Range)* ']' Spacing
+Class <- '[' (! {OPEN-568} ']' Range)* ']' Spacing
+Class <- '[' (! {Literal-568} ']' Range)* ']' Spacing
+Class <- '[' (!' {Char-569} ]' Range)* ']' Spacing
+Class <- '[' (!']'  {Comment-572} Range)* ']' Spacing
+Class <- '[' (!']'  {QUESTION-572} Range)* ']' Spacing
+Class <- '[' (!']'  {STAR-572} Range)* ']' Spacing
+Class <- '[' (!']'  {PLUS-572} Range)* ']' Spacing
+Class <- '[' (!']'  {Prefix-572} Range)* ']' Spacing
+Class <- '[' (!']'  {AND-572} Range)* ']' Spacing
+Class <- '[' (!']'  {NOT-572} Range)* ']' Spacing
+Class <- '[' (!']'  {Suffix-572} Range)* ']' Spacing
+Class <- '[' (!']'  {Primary-572} Range)* ']' Spacing
+Class <- '[' (!']'  {Identifier-572} Range)* ']' Spacing
+Class <- '[' (!']' Range {Comment-577} )* ']' Spacing
+Class <- '[' (!']' Range {LEFTARROW-577} )* ']' Spacing
+Class <- '[' (!']' Range {QUESTION-577} )* ']' Spacing
+Class <- '[' (!']' Range {STAR-577} )* ']' Spacing
+Class <- '[' (!']' Range {PLUS-577} )* ']' Spacing
+Class <- '[' (!']' Range {Prefix-577} )* ']' Spacing
+Class <- '[' (!']' Range {AND-577} )* ']' Spacing
+Class <- '[' (!']' Range {NOT-577} )* ']' Spacing
+Class <- '[' (!']' Range {Suffix-577} )* ']' Spacing
+Class <- '[' (!']' Range {Primary-577} )* ']' Spacing
+Class <- '[' (!']' Range {Identifier-577} )* ']' Spacing
+Class <- '[' (!']' Range {OPEN-577} )* ']' Spacing
+Class <- '[' (!']' Range {Literal-577} )* ']' Spacing
+Class <- '[' (!']' Range {Klass-577} )* ']' Spacing
+Class <- '[' (!']' Range {DOT-577} )* ']' Spacing
+Class <- '[' (!']' Range {SLASH-577} )* ']' Spacing
+Class <- '[' (!']' Range {CLOSE-577} )* ']' Spacing
+Class <- '[' (!']' Range) {Comment-578} * ']' Spacing
+Class <- '[' (!']' Range) {QUESTION-578} * ']' Spacing
+Class <- '[' (!']' Range) {STAR-578} * ']' Spacing
+Class <- '[' (!']' Range)*  {Comment-580} ']' Spacing
+Class <- '[' (!']' Range)*  {Prefix-580} ']' Spacing
+Class <- '[' (!']' Range)*  {AND-580} ']' Spacing
+Class <- '[' (!']' Range)*  {NOT-580} ']' Spacing
+Class <- '[' (!']' Range)*  {Suffix-580} ']' Spacing
+Class <- '[' (!']' Range)*  {Primary-580} ']' Spacing
+Class <- '[' (!']' Range)*  {Identifier-580} ']' Spacing
+Class <- '[' (!']' Range)*  {OPEN-580} ']' Spacing
+Class <- '[' (!']' Range)*  {Literal-580} ']' Spacing
+Class <- '[' (!']' Range)* ' {Char-581} ]' Spacing
+Class <- '[' (!']' Range)* ']'  {Comment-584} Spacing
+Class <- '[' (!']' Range)* ']'  {QUESTION-584} Spacing
+Class <- '[' (!']' Range)* ']'  {STAR-584} Spacing
+Class <- '[' (!']' Range)* ']'  {PLUS-584} Spacing
+Class <- '[' (!']' Range)* ']'  {Prefix-584} Spacing
+Class <- '[' (!']' Range)* ']'  {AND-584} Spacing
+Class <- '[' (!']' Range)* ']'  {NOT-584} Spacing
+Class <- '[' (!']' Range)* ']'  {Suffix-584} Spacing
+Class <- '[' (!']' Range)* ']'  {Primary-584} Spacing
+Class <- '[' (!']' Range)* ']'  {Identifier-584} Spacing
+ {Comment-592} Range <- Char '-' Char / Char
+ {LEFTARROW-592} Range <- Char '-' Char / Char
+ {QUESTION-592} Range <- Char '-' Char / Char
+ {STAR-592} Range <- Char '-' Char / Char
+ {PLUS-592} Range <- Char '-' Char / Char
+ {Prefix-592} Range <- Char '-' Char / Char
+ {AND-592} Range <- Char '-' Char / Char
+ {NOT-592} Range <- Char '-' Char / Char
+ {Suffix-592} Range <- Char '-' Char / Char
+ {Primary-592} Range <- Char '-' Char / Char
+ {Identifier-592} Range <- Char '-' Char / Char
+Range  {Comment-598} <- Char '-' Char / Char
+Range  {LEFTARROW-598} <- Char '-' Char / Char
+Range <-  {Comment-601} Char '-' Char / Char
+ {OPEN-592} Range <- Char '-' Char / Char
+ {Literal-592} Range <- Char '-' Char / Char
+ {Klass-592} Range <- Char '-' Char / Char
+ {DOT-592} Range <- Char '-' Char / Char
+ {SLASH-592} Range <- Char '-' Char / Char
+ {Definition-592} Range <- Char '-' Char / Char
+ {Identifier-592} Range <- Char '-' Char / Char
+Range  {Comment-598} <- Char '-' Char / Char
+Range  {LEFTARROW-598} <- Char '-' Char / Char
+Range <-  {Comment-601} Char '-' Char / Char
+Range <-  {Expression-601} Char '-' Char / Char
+Range <-  {Sequence-601} Char '-' Char / Char
+Range <-  {Prefix-601} Char '-' Char / Char
+Range <-  {AND-601} Char '-' Char / Char
+Range <-  {NOT-601} Char '-' Char / Char
+Range <-  {Suffix-601} Char '-' Char / Char
+Range <-  {Primary-601} Char '-' Char / Char
+Range <-  {Identifier-601} Char '-' Char / Char
+Range <- Char  {Comment-606} '-' Char / Char
+Range <- Char  {LEFTARROW-606} '-' Char / Char
+Range <- Char  {QUESTION-606} '-' Char / Char
+Range <- Char  {STAR-606} '-' Char / Char
+Range <- Char  {PLUS-606} '-' Char / Char
+Range <- Char  {Prefix-606} '-' Char / Char
+Range <- Char  {AND-606} '-' Char / Char
+Range <- Char  {NOT-606} '-' Char / Char
+Range <- Char  {Suffix-606} '-' Char / Char
+Range <- Char  {Primary-606} '-' Char / Char
+Range <- Char  {Identifier-606} '-' Char / Char
+Range <- Char  {OPEN-606} '-' Char / Char
+Range <- Char  {Literal-606} '-' Char / Char
+Range <- Char ' {Char-607} -' Char / Char
+Range <- Char '-'  {Comment-610} Char / Char
+Range <- Char '-'  {QUESTION-610} Char / Char
+Range <- Char '-'  {STAR-610} Char / Char
+Range <- Char '-'  {PLUS-610} Char / Char
+Range <- Char '-'  {Prefix-610} Char / Char
+Range <- Char '-'  {AND-610} Char / Char
+Range <- Char '-'  {NOT-610} Char / Char
+Range <- Char '-'  {Suffix-610} Char / Char
+Range <- Char '-'  {Primary-610} Char / Char
+Range <- Char '-'  {Identifier-610} Char / Char
+Range <- Char '-' Char  {Comment-615} / Char
+Range <- Char '-' Char  {LEFTARROW-615} / Char
+Range <- Char '-' Char  {QUESTION-615} / Char
+Range <- Char '-' Char  {STAR-615} / Char
+Range <- Char '-' Char  {PLUS-615} / Char
+Range <- Char '-' Char  {Prefix-615} / Char
+Range <- Char '-' Char  {AND-615} / Char
+Range <- Char '-' Char  {NOT-615} / Char
+Range <- Char '-' Char  {Suffix-615} / Char
+Range <- Char '-' Char  {Primary-615} / Char
+Range <- Char '-' Char  {Identifier-615} / Char
+Range <- Char '-' Char  {OPEN-615} / Char
+Range <- Char '-' Char  {Literal-615} / Char
+Range <- Char '-' Char  {Klass-615} / Char
+Range <- Char '-' Char  {DOT-615} / Char
+Range <- Char '-' Char  {SLASH-615} / Char
+Range <- Char '-' Char /  {Comment-617} Char
+Range <- Char '-' Char /  {Sequence-617} Char
+Range <- Char '-' Char /  {Prefix-617} Char
+Range <- Char '-' Char /  {AND-617} Char
+Range <- Char '-' Char /  {NOT-617} Char
+Range <- Char '-' Char /  {Suffix-617} Char
+Range <- Char '-' Char /  {Primary-617} Char
+Range <- Char '-' Char /  {Identifier-617} Char
+ {Comment-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {LEFTARROW-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {QUESTION-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {STAR-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {PLUS-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {Prefix-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {AND-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {NOT-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {Suffix-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {Primary-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {Identifier-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char  {Comment-627} <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char  {LEFTARROW-627} <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Comment-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {OPEN-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {Literal-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {Klass-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {DOT-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {SLASH-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {Definition-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+ {Identifier-622} Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char  {Comment-627} <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char  {LEFTARROW-627} <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Comment-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Expression-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Sequence-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Prefix-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {AND-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {NOT-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Suffix-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Primary-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Identifier-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {OPEN-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <-  {Literal-630} '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- ' {Char-631} \\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {Comment-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {QUESTION-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {STAR-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {PLUS-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {Prefix-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {AND-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {NOT-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {Suffix-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {Primary-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {Identifier-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {OPEN-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {Literal-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\'  {Klass-635} [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [ {Range-636} nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [ {Char-636} nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [n {Char-637} rt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nr {Range-638} t'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nr {Char-638} t'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt {Char-639} '"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt' {Range-640} "\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt' {Char-640} "\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'" {Char-641} \[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[ {Range-643} \]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[ {Char-643} \]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\] {Char-645} \\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {Comment-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {QUESTION-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {STAR-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {PLUS-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {Prefix-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {AND-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {NOT-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {Suffix-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {Primary-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {Identifier-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {OPEN-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {Literal-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {Klass-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {DOT-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\]  {SLASH-649} / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {Comment-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {Sequence-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {Prefix-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {AND-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {NOT-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {Suffix-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {Primary-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {Identifier-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {OPEN-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] /  {Literal-651} '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / ' {Char-652} \\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {Comment-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {QUESTION-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {STAR-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {PLUS-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {Prefix-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {AND-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {NOT-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {Suffix-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {Primary-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {Identifier-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {OPEN-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {Literal-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\'  {Klass-656} [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [ {Range-657} 0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [ {Char-657} 0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0- {Char-659} 2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {Comment-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {QUESTION-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {STAR-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {PLUS-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {Prefix-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {AND-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {NOT-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {Suffix-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {Primary-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {Identifier-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {OPEN-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {Literal-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2] {Klass-661} [0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][ {Range-662} 0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][ {Char-662} 0-7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0- {Char-664} 7][0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {Comment-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {QUESTION-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {STAR-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {PLUS-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {Prefix-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {AND-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {NOT-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {Suffix-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {Primary-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {Identifier-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {OPEN-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {Literal-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7] {Klass-666} [0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][ {Range-667} 0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][ {Char-667} 0-7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0- {Char-669} 7] / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {Comment-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {QUESTION-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {STAR-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {PLUS-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {Prefix-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {AND-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {NOT-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {Suffix-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {Primary-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {Identifier-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {OPEN-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {Literal-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {Klass-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {DOT-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7]  {SLASH-672} / '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {Comment-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {Sequence-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {Prefix-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {AND-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {NOT-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {Suffix-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {Primary-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {Identifier-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {OPEN-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] /  {Literal-674} '\\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / ' {Char-675} \\' [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {Comment-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {QUESTION-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {STAR-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {PLUS-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {Prefix-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {AND-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {NOT-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {Suffix-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {Primary-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {Identifier-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {OPEN-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {Literal-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\'  {Klass-679} [0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [ {Range-680} 0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [ {Char-680} 0-7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0- {Char-682} 7][0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {Comment-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {QUESTION-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {STAR-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {PLUS-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {Prefix-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {AND-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {NOT-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {Suffix-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {Primary-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {Identifier-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {OPEN-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {Literal-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7] {Klass-684} [0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][ {Range-685} 0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][ {Char-685} 0-7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0- {Char-687} 7]? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7] {Comment-689} ? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7] {QUESTION-689} ? / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {Comment-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {Prefix-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {AND-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {NOT-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {Suffix-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {Primary-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {Identifier-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {OPEN-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {Literal-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {Klass-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {DOT-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]?  {SLASH-691} / !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? /  {Comment-693} !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? /  {Sequence-693} !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? /  {Prefix-693} !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? /  {AND-693} !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? /  {NOT-693} !'\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / ! {Comment-694} '\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / ! {Suffix-694} '\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / ! {Primary-694} '\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / ! {Identifier-694} '\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / ! {OPEN-694} '\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / ! {Literal-694} '\\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !' {Char-695} \\' .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {Comment-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {QUESTION-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {STAR-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {PLUS-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {Prefix-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {AND-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {NOT-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {Suffix-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {Primary-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {Identifier-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {OPEN-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {Literal-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {Klass-699} .
+Char <- '\\' [nrt'"\[\]\\] / '\\' [0-2][0-7][0-7] / '\\' [0-7][0-7]? / !'\\'  {DOT-699} .
+ {Comment-702} LEFTARROW <- '<-' Spacing
+ {QUESTION-702} LEFTARROW <- '<-' Spacing
+ {STAR-702} LEFTARROW <- '<-' Spacing
+ {PLUS-702} LEFTARROW <- '<-' Spacing
+ {Prefix-702} LEFTARROW <- '<-' Spacing
+ {AND-702} LEFTARROW <- '<-' Spacing
+ {NOT-702} LEFTARROW <- '<-' Spacing
+ {Suffix-702} LEFTARROW <- '<-' Spacing
+ {Primary-702} LEFTARROW <- '<-' Spacing
+ {Identifier-702} LEFTARROW <- '<-' Spacing
+LEFTARROW  {Comment-712} <- '<-' Spacing
+LEFTARROW  {LEFTARROW-712} <- '<-' Spacing
+LEFTARROW <-  {Comment-715} '<-' Spacing
+ {OPEN-702} LEFTARROW <- '<-' Spacing
+ {Literal-702} LEFTARROW <- '<-' Spacing
+ {Klass-702} LEFTARROW <- '<-' Spacing
+ {DOT-702} LEFTARROW <- '<-' Spacing
+ {SLASH-702} LEFTARROW <- '<-' Spacing
+ {Definition-702} LEFTARROW <- '<-' Spacing
+ {Identifier-702} LEFTARROW <- '<-' Spacing
+LEFTARROW  {Comment-712} <- '<-' Spacing
+LEFTARROW  {LEFTARROW-712} <- '<-' Spacing
+LEFTARROW <-  {Comment-715} '<-' Spacing
+LEFTARROW <-  {Expression-715} '<-' Spacing
+LEFTARROW <-  {Sequence-715} '<-' Spacing
+LEFTARROW <-  {Prefix-715} '<-' Spacing
+LEFTARROW <-  {AND-715} '<-' Spacing
+LEFTARROW <-  {NOT-715} '<-' Spacing
+LEFTARROW <-  {Suffix-715} '<-' Spacing
+LEFTARROW <-  {Primary-715} '<-' Spacing
+LEFTARROW <-  {Identifier-715} '<-' Spacing
+LEFTARROW <-  {OPEN-715} '<-' Spacing
+LEFTARROW <-  {Literal-715} '<-' Spacing
+LEFTARROW <- ' {Char-716} <-' Spacing
+LEFTARROW <- '< {Char-717} -' Spacing
+LEFTARROW <- '<-'  {Comment-720} Spacing
+LEFTARROW <- '<-'  {QUESTION-720} Spacing
+LEFTARROW <- '<-'  {STAR-720} Spacing
+LEFTARROW <- '<-'  {PLUS-720} Spacing
+LEFTARROW <- '<-'  {Prefix-720} Spacing
+LEFTARROW <- '<-'  {AND-720} Spacing
+LEFTARROW <- '<-'  {NOT-720} Spacing
+LEFTARROW <- '<-'  {Suffix-720} Spacing
+LEFTARROW <- '<-'  {Primary-720} Spacing
+LEFTARROW <- '<-'  {Identifier-720} Spacing
+ {Comment-728} SLASH <- '/' Spacing
+ {LEFTARROW-728} SLASH <- '/' Spacing
+ {QUESTION-728} SLASH <- '/' Spacing
+ {STAR-728} SLASH <- '/' Spacing
+ {PLUS-728} SLASH <- '/' Spacing
+ {Prefix-728} SLASH <- '/' Spacing
+ {AND-728} SLASH <- '/' Spacing
+ {NOT-728} SLASH <- '/' Spacing
+ {Suffix-728} SLASH <- '/' Spacing
+ {Primary-728} SLASH <- '/' Spacing
+ {Identifier-728} SLASH <- '/' Spacing
+SLASH  {Comment-734} <- '/' Spacing
+SLASH  {LEFTARROW-734} <- '/' Spacing
+SLASH <-  {Comment-737} '/' Spacing
+ {OPEN-728} SLASH <- '/' Spacing
+ {Literal-728} SLASH <- '/' Spacing
+ {Klass-728} SLASH <- '/' Spacing
+ {DOT-728} SLASH <- '/' Spacing
+ {SLASH-728} SLASH <- '/' Spacing
+ {Definition-728} SLASH <- '/' Spacing
+ {Identifier-728} SLASH <- '/' Spacing
+SLASH  {Comment-734} <- '/' Spacing
+SLASH  {LEFTARROW-734} <- '/' Spacing
+SLASH <-  {Comment-737} '/' Spacing
+SLASH <-  {Expression-737} '/' Spacing
+SLASH <-  {Sequence-737} '/' Spacing
+SLASH <-  {Prefix-737} '/' Spacing
+SLASH <-  {AND-737} '/' Spacing
+SLASH <-  {NOT-737} '/' Spacing
+SLASH <-  {Suffix-737} '/' Spacing
+SLASH <-  {Primary-737} '/' Spacing
+SLASH <-  {Identifier-737} '/' Spacing
+SLASH <-  {OPEN-737} '/' Spacing
+SLASH <-  {Literal-737} '/' Spacing
+SLASH <- ' {Char-738} /' Spacing
+SLASH <- '/'  {Comment-741} Spacing
+SLASH <- '/'  {QUESTION-741} Spacing
+SLASH <- '/'  {STAR-741} Spacing
+SLASH <- '/'  {PLUS-741} Spacing
+SLASH <- '/'  {Prefix-741} Spacing
+SLASH <- '/'  {AND-741} Spacing
+SLASH <- '/'  {NOT-741} Spacing
+SLASH <- '/'  {Suffix-741} Spacing
+SLASH <- '/'  {Primary-741} Spacing
+SLASH <- '/'  {Identifier-741} Spacing
+ {Comment-749} AND <- '&' Spacing
+ {LEFTARROW-749} AND <- '&' Spacing
+ {QUESTION-749} AND <- '&' Spacing
+ {STAR-749} AND <- '&' Spacing
+ {PLUS-749} AND <- '&' Spacing
+ {Prefix-749} AND <- '&' Spacing
+ {AND-749} AND <- '&' Spacing
+ {NOT-749} AND <- '&' Spacing
+ {Suffix-749} AND <- '&' Spacing
+ {Primary-749} AND <- '&' Spacing
+ {Identifier-749} AND <- '&' Spacing
+AND  {Comment-753} <- '&' Spacing
+AND  {LEFTARROW-753} <- '&' Spacing
+AND <-  {Comment-756} '&' Spacing
+ {OPEN-749} AND <- '&' Spacing
+ {Literal-749} AND <- '&' Spacing
+ {Klass-749} AND <- '&' Spacing
+ {DOT-749} AND <- '&' Spacing
+ {SLASH-749} AND <- '&' Spacing
+ {Definition-749} AND <- '&' Spacing
+ {Identifier-749} AND <- '&' Spacing
+AND  {Comment-753} <- '&' Spacing
+AND  {LEFTARROW-753} <- '&' Spacing
+AND <-  {Comment-756} '&' Spacing
+AND <-  {Expression-756} '&' Spacing
+AND <-  {Sequence-756} '&' Spacing
+AND <-  {Prefix-756} '&' Spacing
+AND <-  {AND-756} '&' Spacing
+AND <-  {NOT-756} '&' Spacing
+AND <-  {Suffix-756} '&' Spacing
+AND <-  {Primary-756} '&' Spacing
+AND <-  {Identifier-756} '&' Spacing
+AND <-  {OPEN-756} '&' Spacing
+AND <-  {Literal-756} '&' Spacing
+AND <- ' {Char-757} &' Spacing
+AND <- '&'  {Comment-760} Spacing
+AND <- '&'  {QUESTION-760} Spacing
+AND <- '&'  {STAR-760} Spacing
+AND <- '&'  {PLUS-760} Spacing
+AND <- '&'  {Prefix-760} Spacing
+AND <- '&'  {AND-760} Spacing
+AND <- '&'  {NOT-760} Spacing
+AND <- '&'  {Suffix-760} Spacing
+AND <- '&'  {Primary-760} Spacing
+AND <- '&'  {Identifier-760} Spacing
+ {Comment-768} NOT <- '!' Spacing
+ {LEFTARROW-768} NOT <- '!' Spacing
+ {QUESTION-768} NOT <- '!' Spacing
+ {STAR-768} NOT <- '!' Spacing
+ {PLUS-768} NOT <- '!' Spacing
+ {Prefix-768} NOT <- '!' Spacing
+ {AND-768} NOT <- '!' Spacing
+ {NOT-768} NOT <- '!' Spacing
+ {Suffix-768} NOT <- '!' Spacing
+ {Primary-768} NOT <- '!' Spacing
+ {Identifier-768} NOT <- '!' Spacing
+NOT  {Comment-772} <- '!' Spacing
+NOT  {LEFTARROW-772} <- '!' Spacing
+NOT <-  {Comment-775} '!' Spacing
+ {OPEN-768} NOT <- '!' Spacing
+ {Literal-768} NOT <- '!' Spacing
+ {Klass-768} NOT <- '!' Spacing
+ {DOT-768} NOT <- '!' Spacing
+ {SLASH-768} NOT <- '!' Spacing
+ {Definition-768} NOT <- '!' Spacing
+ {Identifier-768} NOT <- '!' Spacing
+NOT  {Comment-772} <- '!' Spacing
+NOT  {LEFTARROW-772} <- '!' Spacing
+NOT <-  {Comment-775} '!' Spacing
+NOT <-  {Expression-775} '!' Spacing
+NOT <-  {Sequence-775} '!' Spacing
+NOT <-  {Prefix-775} '!' Spacing
+NOT <-  {AND-775} '!' Spacing
+NOT <-  {NOT-775} '!' Spacing
+NOT <-  {Suffix-775} '!' Spacing
+NOT <-  {Primary-775} '!' Spacing
+NOT <-  {Identifier-775} '!' Spacing
+NOT <-  {OPEN-775} '!' Spacing
+NOT <-  {Literal-775} '!' Spacing
+NOT <- ' {Char-776} !' Spacing
+NOT <- '!'  {Comment-779} Spacing
+NOT <- '!'  {QUESTION-779} Spacing
+NOT <- '!'  {STAR-779} Spacing
+NOT <- '!'  {PLUS-779} Spacing
+NOT <- '!'  {Prefix-779} Spacing
+NOT <- '!'  {AND-779} Spacing
+NOT <- '!'  {NOT-779} Spacing
+NOT <- '!'  {Suffix-779} Spacing
+NOT <- '!'  {Primary-779} Spacing
+NOT <- '!'  {Identifier-779} Spacing
+ {Comment-787} QUESTION <- '?' Spacing
+ {LEFTARROW-787} QUESTION <- '?' Spacing
+ {QUESTION-787} QUESTION <- '?' Spacing
+ {STAR-787} QUESTION <- '?' Spacing
+ {PLUS-787} QUESTION <- '?' Spacing
+ {Prefix-787} QUESTION <- '?' Spacing
+ {AND-787} QUESTION <- '?' Spacing
+ {NOT-787} QUESTION <- '?' Spacing
+ {Suffix-787} QUESTION <- '?' Spacing
+ {Primary-787} QUESTION <- '?' Spacing
+ {Identifier-787} QUESTION <- '?' Spacing
+QUESTION  {Comment-796} <- '?' Spacing
+QUESTION  {LEFTARROW-796} <- '?' Spacing
+QUESTION <-  {Comment-799} '?' Spacing
+ {OPEN-787} QUESTION <- '?' Spacing
+ {Literal-787} QUESTION <- '?' Spacing
+ {Klass-787} QUESTION <- '?' Spacing
+ {DOT-787} QUESTION <- '?' Spacing
+ {SLASH-787} QUESTION <- '?' Spacing
+ {Definition-787} QUESTION <- '?' Spacing
+ {Identifier-787} QUESTION <- '?' Spacing
+QUESTION  {Comment-796} <- '?' Spacing
+QUESTION  {LEFTARROW-796} <- '?' Spacing
+QUESTION <-  {Comment-799} '?' Spacing
+QUESTION <-  {Expression-799} '?' Spacing
+QUESTION <-  {Sequence-799} '?' Spacing
+QUESTION <-  {Prefix-799} '?' Spacing
+QUESTION <-  {AND-799} '?' Spacing
+QUESTION <-  {NOT-799} '?' Spacing
+QUESTION <-  {Suffix-799} '?' Spacing
+QUESTION <-  {Primary-799} '?' Spacing
+QUESTION <-  {Identifier-799} '?' Spacing
+QUESTION <-  {OPEN-799} '?' Spacing
+QUESTION <-  {Literal-799} '?' Spacing
+QUESTION <- ' {Char-800} ?' Spacing
+QUESTION <- '?'  {Comment-803} Spacing
+QUESTION <- '?'  {QUESTION-803} Spacing
+QUESTION <- '?'  {STAR-803} Spacing
+QUESTION <- '?'  {PLUS-803} Spacing
+QUESTION <- '?'  {Prefix-803} Spacing
+QUESTION <- '?'  {AND-803} Spacing
+QUESTION <- '?'  {NOT-803} Spacing
+QUESTION <- '?'  {Suffix-803} Spacing
+QUESTION <- '?'  {Primary-803} Spacing
+QUESTION <- '?'  {Identifier-803} Spacing
+ {Comment-811} STAR <- '*' Spacing
+ {LEFTARROW-811} STAR <- '*' Spacing
+ {QUESTION-811} STAR <- '*' Spacing
+ {STAR-811} STAR <- '*' Spacing
+ {PLUS-811} STAR <- '*' Spacing
+ {Prefix-811} STAR <- '*' Spacing
+ {AND-811} STAR <- '*' Spacing
+ {NOT-811} STAR <- '*' Spacing
+ {Suffix-811} STAR <- '*' Spacing
+ {Primary-811} STAR <- '*' Spacing
+ {Identifier-811} STAR <- '*' Spacing
+STAR  {Comment-816} <- '*' Spacing
+STAR  {LEFTARROW-816} <- '*' Spacing
+STAR <-  {Comment-819} '*' Spacing
+ {OPEN-811} STAR <- '*' Spacing
+ {Literal-811} STAR <- '*' Spacing
+ {Klass-811} STAR <- '*' Spacing
+ {DOT-811} STAR <- '*' Spacing
+ {SLASH-811} STAR <- '*' Spacing
+ {Definition-811} STAR <- '*' Spacing
+ {Identifier-811} STAR <- '*' Spacing
+STAR  {Comment-816} <- '*' Spacing
+STAR  {LEFTARROW-816} <- '*' Spacing
+STAR <-  {Comment-819} '*' Spacing
+STAR <-  {Expression-819} '*' Spacing
+STAR <-  {Sequence-819} '*' Spacing
+STAR <-  {Prefix-819} '*' Spacing
+STAR <-  {AND-819} '*' Spacing
+STAR <-  {NOT-819} '*' Spacing
+STAR <-  {Suffix-819} '*' Spacing
+STAR <-  {Primary-819} '*' Spacing
+STAR <-  {Identifier-819} '*' Spacing
+STAR <-  {OPEN-819} '*' Spacing
+STAR <-  {Literal-819} '*' Spacing
+STAR <- ' {Char-820} *' Spacing
+STAR <- '*'  {Comment-823} Spacing
+STAR <- '*'  {QUESTION-823} Spacing
+STAR <- '*'  {STAR-823} Spacing
+STAR <- '*'  {PLUS-823} Spacing
+STAR <- '*'  {Prefix-823} Spacing
+STAR <- '*'  {AND-823} Spacing
+STAR <- '*'  {NOT-823} Spacing
+STAR <- '*'  {Suffix-823} Spacing
+STAR <- '*'  {Primary-823} Spacing
+STAR <- '*'  {Identifier-823} Spacing
+ {Comment-831} PLUS <- '+' Spacing
+ {LEFTARROW-831} PLUS <- '+' Spacing
+ {QUESTION-831} PLUS <- '+' Spacing
+ {STAR-831} PLUS <- '+' Spacing
+ {PLUS-831} PLUS <- '+' Spacing
+ {Prefix-831} PLUS <- '+' Spacing
+ {AND-831} PLUS <- '+' Spacing
+ {NOT-831} PLUS <- '+' Spacing
+ {Suffix-831} PLUS <- '+' Spacing
+ {Primary-831} PLUS <- '+' Spacing
+ {Identifier-831} PLUS <- '+' Spacing
+PLUS  {Comment-836} <- '+' Spacing
+PLUS  {LEFTARROW-836} <- '+' Spacing
+PLUS <-  {Comment-839} '+' Spacing
+ {OPEN-831} PLUS <- '+' Spacing
+ {Literal-831} PLUS <- '+' Spacing
+ {Klass-831} PLUS <- '+' Spacing
+ {DOT-831} PLUS <- '+' Spacing
+ {SLASH-831} PLUS <- '+' Spacing
+ {Definition-831} PLUS <- '+' Spacing
+ {Identifier-831} PLUS <- '+' Spacing
+PLUS  {Comment-836} <- '+' Spacing
+PLUS  {LEFTARROW-836} <- '+' Spacing
+PLUS <-  {Comment-839} '+' Spacing
+PLUS <-  {Expression-839} '+' Spacing
+PLUS <-  {Sequence-839} '+' Spacing
+PLUS <-  {Prefix-839} '+' Spacing
+PLUS <-  {AND-839} '+' Spacing
+PLUS <-  {NOT-839} '+' Spacing
+PLUS <-  {Suffix-839} '+' Spacing
+PLUS <-  {Primary-839} '+' Spacing
+PLUS <-  {Identifier-839} '+' Spacing
+PLUS <-  {OPEN-839} '+' Spacing
+PLUS <-  {Literal-839} '+' Spacing
+PLUS <- ' {Char-840} +' Spacing
+PLUS <- '+'  {Comment-843} Spacing
+PLUS <- '+'  {QUESTION-843} Spacing
+PLUS <- '+'  {STAR-843} Spacing
+PLUS <- '+'  {PLUS-843} Spacing
+PLUS <- '+'  {Prefix-843} Spacing
+PLUS <- '+'  {AND-843} Spacing
+PLUS <- '+'  {NOT-843} Spacing
+PLUS <- '+'  {Suffix-843} Spacing
+PLUS <- '+'  {Primary-843} Spacing
+PLUS <- '+'  {Identifier-843} Spacing
+ {Comment-851} OPEN <- '(' Spacing
+ {LEFTARROW-851} OPEN <- '(' Spacing
+ {QUESTION-851} OPEN <- '(' Spacing
+ {STAR-851} OPEN <- '(' Spacing
+ {PLUS-851} OPEN <- '(' Spacing
+ {Prefix-851} OPEN <- '(' Spacing
+ {AND-851} OPEN <- '(' Spacing
+ {NOT-851} OPEN <- '(' Spacing
+ {Suffix-851} OPEN <- '(' Spacing
+ {Primary-851} OPEN <- '(' Spacing
+ {Identifier-851} OPEN <- '(' Spacing
+OPEN  {Comment-856} <- '(' Spacing
+OPEN  {LEFTARROW-856} <- '(' Spacing
+OPEN <-  {Comment-859} '(' Spacing
+ {OPEN-851} OPEN <- '(' Spacing
+ {Literal-851} OPEN <- '(' Spacing
+ {Klass-851} OPEN <- '(' Spacing
+ {DOT-851} OPEN <- '(' Spacing
+ {SLASH-851} OPEN <- '(' Spacing
+ {Definition-851} OPEN <- '(' Spacing
+ {Identifier-851} OPEN <- '(' Spacing
+OPEN  {Comment-856} <- '(' Spacing
+OPEN  {LEFTARROW-856} <- '(' Spacing
+OPEN <-  {Comment-859} '(' Spacing
+OPEN <-  {Expression-859} '(' Spacing
+OPEN <-  {Sequence-859} '(' Spacing
+OPEN <-  {Prefix-859} '(' Spacing
+OPEN <-  {AND-859} '(' Spacing
+OPEN <-  {NOT-859} '(' Spacing
+OPEN <-  {Suffix-859} '(' Spacing
+OPEN <-  {Primary-859} '(' Spacing
+OPEN <-  {Identifier-859} '(' Spacing
+OPEN <-  {OPEN-859} '(' Spacing
+OPEN <-  {Literal-859} '(' Spacing
+OPEN <- ' {Char-860} (' Spacing
+OPEN <- '('  {Comment-863} Spacing
+OPEN <- '('  {QUESTION-863} Spacing
+OPEN <- '('  {STAR-863} Spacing
+OPEN <- '('  {PLUS-863} Spacing
+OPEN <- '('  {Prefix-863} Spacing
+OPEN <- '('  {AND-863} Spacing
+OPEN <- '('  {NOT-863} Spacing
+OPEN <- '('  {Suffix-863} Spacing
+OPEN <- '('  {Primary-863} Spacing
+OPEN <- '('  {Identifier-863} Spacing
+ {Comment-871} CLOSE <- ')' Spacing
+ {LEFTARROW-871} CLOSE <- ')' Spacing
+ {QUESTION-871} CLOSE <- ')' Spacing
+ {STAR-871} CLOSE <- ')' Spacing
+ {PLUS-871} CLOSE <- ')' Spacing
+ {Prefix-871} CLOSE <- ')' Spacing
+ {AND-871} CLOSE <- ')' Spacing
+ {NOT-871} CLOSE <- ')' Spacing
+ {Suffix-871} CLOSE <- ')' Spacing
+ {Primary-871} CLOSE <- ')' Spacing
+ {Identifier-871} CLOSE <- ')' Spacing
+CLOSE  {Comment-877} <- ')' Spacing
+CLOSE  {LEFTARROW-877} <- ')' Spacing
+CLOSE <-  {Comment-880} ')' Spacing
+ {OPEN-871} CLOSE <- ')' Spacing
+ {Literal-871} CLOSE <- ')' Spacing
+ {Klass-871} CLOSE <- ')' Spacing
+ {DOT-871} CLOSE <- ')' Spacing
+ {SLASH-871} CLOSE <- ')' Spacing
+ {Definition-871} CLOSE <- ')' Spacing
+ {Identifier-871} CLOSE <- ')' Spacing
+CLOSE  {Comment-877} <- ')' Spacing
+CLOSE  {LEFTARROW-877} <- ')' Spacing
+CLOSE <-  {Comment-880} ')' Spacing
+CLOSE <-  {Expression-880} ')' Spacing
+CLOSE <-  {Sequence-880} ')' Spacing
+CLOSE <-  {Prefix-880} ')' Spacing
+CLOSE <-  {AND-880} ')' Spacing
+CLOSE <-  {NOT-880} ')' Spacing
+CLOSE <-  {Suffix-880} ')' Spacing
+CLOSE <-  {Primary-880} ')' Spacing
+CLOSE <-  {Identifier-880} ')' Spacing
+CLOSE <-  {OPEN-880} ')' Spacing
+CLOSE <-  {Literal-880} ')' Spacing
+CLOSE <- ' {Char-881} )' Spacing
+CLOSE <- ')'  {Comment-884} Spacing
+CLOSE <- ')'  {QUESTION-884} Spacing
+CLOSE <- ')'  {STAR-884} Spacing
+CLOSE <- ')'  {PLUS-884} Spacing
+CLOSE <- ')'  {Prefix-884} Spacing
+CLOSE <- ')'  {AND-884} Spacing
+CLOSE <- ')'  {NOT-884} Spacing
+CLOSE <- ')'  {Suffix-884} Spacing
+CLOSE <- ')'  {Primary-884} Spacing
+CLOSE <- ')'  {Identifier-884} Spacing
+ {Comment-892} DOT <- '.' Spacing
+ {LEFTARROW-892} DOT <- '.' Spacing
+ {QUESTION-892} DOT <- '.' Spacing
+ {STAR-892} DOT <- '.' Spacing
+ {PLUS-892} DOT <- '.' Spacing
+ {Prefix-892} DOT <- '.' Spacing
+ {AND-892} DOT <- '.' Spacing
+ {NOT-892} DOT <- '.' Spacing
+ {Suffix-892} DOT <- '.' Spacing
+ {Primary-892} DOT <- '.' Spacing
+ {Identifier-892} DOT <- '.' Spacing
+DOT  {Comment-896} <- '.' Spacing
+DOT  {LEFTARROW-896} <- '.' Spacing
+DOT <-  {Comment-899} '.' Spacing
+ {OPEN-892} DOT <- '.' Spacing
+ {Literal-892} DOT <- '.' Spacing
+ {Klass-892} DOT <- '.' Spacing
+ {DOT-892} DOT <- '.' Spacing
+ {SLASH-892} DOT <- '.' Spacing
+ {Definition-892} DOT <- '.' Spacing
+ {Identifier-892} DOT <- '.' Spacing
+DOT  {Comment-896} <- '.' Spacing
+DOT  {LEFTARROW-896} <- '.' Spacing
+DOT <-  {Comment-899} '.' Spacing
+DOT <-  {Expression-899} '.' Spacing
+DOT <-  {Sequence-899} '.' Spacing
+DOT <-  {Prefix-899} '.' Spacing
+DOT <-  {AND-899} '.' Spacing
+DOT <-  {NOT-899} '.' Spacing
+DOT <-  {Suffix-899} '.' Spacing
+DOT <-  {Primary-899} '.' Spacing
+DOT <-  {Identifier-899} '.' Spacing
+DOT <-  {OPEN-899} '.' Spacing
+DOT <-  {Literal-899} '.' Spacing
+DOT <- ' {Char-900} .' Spacing
+DOT <- '.'  {Comment-903} Spacing
+DOT <- '.'  {QUESTION-903} Spacing
+DOT <- '.'  {STAR-903} Spacing
+DOT <- '.'  {PLUS-903} Spacing
+DOT <- '.'  {Prefix-903} Spacing
+DOT <- '.'  {AND-903} Spacing
+DOT <- '.'  {NOT-903} Spacing
+DOT <- '.'  {Suffix-903} Spacing
+DOT <- '.'  {Primary-903} Spacing
+DOT <- '.'  {Identifier-903} Spacing
+ {Comment-912} Spacing <- (Space / Comment)*
+ {LEFTARROW-912} Spacing <- (Space / Comment)*
+ {QUESTION-912} Spacing <- (Space / Comment)*
+ {STAR-912} Spacing <- (Space / Comment)*
+ {PLUS-912} Spacing <- (Space / Comment)*
+ {Prefix-912} Spacing <- (Space / Comment)*
+ {AND-912} Spacing <- (Space / Comment)*
+ {NOT-912} Spacing <- (Space / Comment)*
+ {Suffix-912} Spacing <- (Space / Comment)*
+ {Primary-912} Spacing <- (Space / Comment)*
+ {Identifier-912} Spacing <- (Space / Comment)*
+Spacing  {Comment-920} <- (Space / Comment)*
+Spacing  {LEFTARROW-920} <- (Space / Comment)*
+Spacing <-  {Comment-923} (Space / Comment)*
+ {OPEN-912} Spacing <- (Space / Comment)*
+ {Literal-912} Spacing <- (Space / Comment)*
+ {Klass-912} Spacing <- (Space / Comment)*
+ {DOT-912} Spacing <- (Space / Comment)*
+ {SLASH-912} Spacing <- (Space / Comment)*
+ {Definition-912} Spacing <- (Space / Comment)*
+ {Identifier-912} Spacing <- (Space / Comment)*
+Spacing  {Comment-920} <- (Space / Comment)*
+Spacing  {LEFTARROW-920} <- (Space / Comment)*
+Spacing <-  {Comment-923} (Space / Comment)*
+Spacing <-  {Expression-923} (Space / Comment)*
+Spacing <-  {Sequence-923} (Space / Comment)*
+Spacing <-  {Prefix-923} (Space / Comment)*
+Spacing <-  {AND-923} (Space / Comment)*
+Spacing <-  {NOT-923} (Space / Comment)*
+Spacing <-  {Suffix-923} (Space / Comment)*
+Spacing <-  {Primary-923} (Space / Comment)*
+Spacing <-  {Identifier-923} (Space / Comment)*
+Spacing <-  {OPEN-923} (Space / Comment)*
+Spacing <- ( {Comment-924} Space / Comment)*
+Spacing <- ( {Expression-924} Space / Comment)*
+Spacing <- ( {Sequence-924} Space / Comment)*
+Spacing <- ( {Prefix-924} Space / Comment)*
+Spacing <- ( {AND-924} Space / Comment)*
+Spacing <- ( {NOT-924} Space / Comment)*
+Spacing <- ( {Suffix-924} Space / Comment)*
+Spacing <- ( {Primary-924} Space / Comment)*
+Spacing <- ( {Identifier-924} Space / Comment)*
+Spacing <- (Space  {Comment-930} / Comment)*
+Spacing <- (Space  {LEFTARROW-930} / Comment)*
+Spacing <- (Space  {QUESTION-930} / Comment)*
+Spacing <- (Space  {STAR-930} / Comment)*
+Spacing <- (Space  {PLUS-930} / Comment)*
+Spacing <- (Space  {Prefix-930} / Comment)*
+Spacing <- (Space  {AND-930} / Comment)*
+Spacing <- (Space  {NOT-930} / Comment)*
+Spacing <- (Space  {Suffix-930} / Comment)*
+Spacing <- (Space  {Primary-930} / Comment)*
+Spacing <- (Space  {Identifier-930} / Comment)*
+Spacing <- (Space  {OPEN-930} / Comment)*
+Spacing <- (Space  {Literal-930} / Comment)*
+Spacing <- (Space  {Klass-930} / Comment)*
+Spacing <- (Space  {DOT-930} / Comment)*
+Spacing <- (Space  {SLASH-930} / Comment)*
+Spacing <- (Space /  {Comment-932} Comment)*
+Spacing <- (Space /  {Sequence-932} Comment)*
+Spacing <- (Space /  {Prefix-932} Comment)*
+Spacing <- (Space /  {AND-932} Comment)*
+Spacing <- (Space /  {NOT-932} Comment)*
+Spacing <- (Space /  {Suffix-932} Comment)*
+Spacing <- (Space /  {Primary-932} Comment)*
+Spacing <- (Space /  {Identifier-932} Comment)*
+Spacing <- (Space / Comment {Comment-939} )*
+Spacing <- (Space / Comment {LEFTARROW-939} )*
+Spacing <- (Space / Comment {QUESTION-939} )*
+Spacing <- (Space / Comment {STAR-939} )*
+Spacing <- (Space / Comment {PLUS-939} )*
+Spacing <- (Space / Comment {Prefix-939} )*
+Spacing <- (Space / Comment {AND-939} )*
+Spacing <- (Space / Comment {NOT-939} )*
+Spacing <- (Space / Comment {Suffix-939} )*
+Spacing <- (Space / Comment {Primary-939} )*
+Spacing <- (Space / Comment {Identifier-939} )*
+Spacing <- (Space / Comment {OPEN-939} )*
+Spacing <- (Space / Comment {Literal-939} )*
+Spacing <- (Space / Comment {Klass-939} )*
+Spacing <- (Space / Comment {DOT-939} )*
+Spacing <- (Space / Comment {SLASH-939} )*
+Spacing <- (Space / Comment {CLOSE-939} )*
+Spacing <- (Space / Comment) {Comment-940} *
+Spacing <- (Space / Comment) {QUESTION-940} *
+Spacing <- (Space / Comment) {STAR-940} *
+ {Comment-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {Prefix-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {AND-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {NOT-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {Suffix-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {Primary-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {Identifier-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+Comment  {Comment-950} <- '#' (!EndOfLine .)* EndOfLine
+Comment  {LEFTARROW-950} <- '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Comment-953} '#' (!EndOfLine .)* EndOfLine
+ {OPEN-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {Literal-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {Klass-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {DOT-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {SLASH-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {Definition-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+ {Identifier-942} Comment <- '#' (!EndOfLine .)* EndOfLine
+Comment  {Comment-950} <- '#' (!EndOfLine .)* EndOfLine
+Comment  {LEFTARROW-950} <- '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Comment-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Expression-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Sequence-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Prefix-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {AND-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {NOT-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Suffix-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Primary-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Identifier-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {OPEN-953} '#' (!EndOfLine .)* EndOfLine
+Comment <-  {Literal-953} '#' (!EndOfLine .)* EndOfLine
+Comment <- ' {Char-954} #' (!EndOfLine .)* EndOfLine
+Comment <- '#'  {Comment-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {QUESTION-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {STAR-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {PLUS-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {Prefix-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {AND-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {NOT-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {Suffix-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {Primary-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {Identifier-957} (!EndOfLine .)* EndOfLine
+Comment <- '#'  {OPEN-957} (!EndOfLine .)* EndOfLine
+Comment <- '#' ( {Comment-958} !EndOfLine .)* EndOfLine
+Comment <- '#' ( {Expression-958} !EndOfLine .)* EndOfLine
+Comment <- '#' ( {Sequence-958} !EndOfLine .)* EndOfLine
+Comment <- '#' ( {Prefix-958} !EndOfLine .)* EndOfLine
+Comment <- '#' ( {AND-958} !EndOfLine .)* EndOfLine
+Comment <- '#' ( {NOT-958} !EndOfLine .)* EndOfLine
+Comment <- '#' (! {Comment-959} EndOfLine .)* EndOfLine
+Comment <- '#' (! {Suffix-959} EndOfLine .)* EndOfLine
+Comment <- '#' (! {Primary-959} EndOfLine .)* EndOfLine
+Comment <- '#' (! {Identifier-959} EndOfLine .)* EndOfLine
+Comment <- '#' (!EndOfLine  {Comment-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {LEFTARROW-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {QUESTION-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {STAR-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {PLUS-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {Prefix-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {AND-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {NOT-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {Suffix-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {Primary-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {Identifier-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {OPEN-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {Literal-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {Klass-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine  {DOT-969} .)* EndOfLine
+Comment <- '#' (!EndOfLine . {Comment-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {QUESTION-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {STAR-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {PLUS-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {Prefix-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {AND-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {NOT-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {Suffix-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {Primary-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {Identifier-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {OPEN-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {Literal-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {Klass-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {DOT-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {SLASH-970} )* EndOfLine
+Comment <- '#' (!EndOfLine . {CLOSE-970} )* EndOfLine
+Comment <- '#' (!EndOfLine .) {Comment-971} * EndOfLine
+Comment <- '#' (!EndOfLine .) {QUESTION-971} * EndOfLine
+Comment <- '#' (!EndOfLine .) {STAR-971} * EndOfLine
+Comment <- '#' (!EndOfLine .)*  {Comment-973} EndOfLine
+Comment <- '#' (!EndOfLine .)*  {Prefix-973} EndOfLine
+Comment <- '#' (!EndOfLine .)*  {AND-973} EndOfLine
+Comment <- '#' (!EndOfLine .)*  {NOT-973} EndOfLine
+Comment <- '#' (!EndOfLine .)*  {Suffix-973} EndOfLine
+Comment <- '#' (!EndOfLine .)*  {Primary-973} EndOfLine
+Comment <- '#' (!EndOfLine .)*  {Identifier-973} EndOfLine
+ {Comment-983} Space <- ' ' / '\t' / EndOfLine
+ {LEFTARROW-983} Space <- ' ' / '\t' / EndOfLine
+ {QUESTION-983} Space <- ' ' / '\t' / EndOfLine
+ {STAR-983} Space <- ' ' / '\t' / EndOfLine
+ {PLUS-983} Space <- ' ' / '\t' / EndOfLine
+ {Prefix-983} Space <- ' ' / '\t' / EndOfLine
+ {AND-983} Space <- ' ' / '\t' / EndOfLine
+ {NOT-983} Space <- ' ' / '\t' / EndOfLine
+ {Suffix-983} Space <- ' ' / '\t' / EndOfLine
+ {Primary-983} Space <- ' ' / '\t' / EndOfLine
+ {Identifier-983} Space <- ' ' / '\t' / EndOfLine
+Space  {Comment-989} <- ' ' / '\t' / EndOfLine
+Space  {LEFTARROW-989} <- ' ' / '\t' / EndOfLine
+Space <-  {Comment-992} ' ' / '\t' / EndOfLine
+ {OPEN-983} Space <- ' ' / '\t' / EndOfLine
+ {Literal-983} Space <- ' ' / '\t' / EndOfLine
+ {Klass-983} Space <- ' ' / '\t' / EndOfLine
+ {DOT-983} Space <- ' ' / '\t' / EndOfLine
+ {SLASH-983} Space <- ' ' / '\t' / EndOfLine
+ {Definition-983} Space <- ' ' / '\t' / EndOfLine
+ {Identifier-983} Space <- ' ' / '\t' / EndOfLine
+Space  {Comment-989} <- ' ' / '\t' / EndOfLine
+Space  {LEFTARROW-989} <- ' ' / '\t' / EndOfLine
+Space <-  {Comment-992} ' ' / '\t' / EndOfLine
+Space <-  {Expression-992} ' ' / '\t' / EndOfLine
+Space <-  {Sequence-992} ' ' / '\t' / EndOfLine
+Space <-  {Prefix-992} ' ' / '\t' / EndOfLine
+Space <-  {AND-992} ' ' / '\t' / EndOfLine
+Space <-  {NOT-992} ' ' / '\t' / EndOfLine
+Space <-  {Suffix-992} ' ' / '\t' / EndOfLine
+Space <-  {Primary-992} ' ' / '\t' / EndOfLine
+Space <-  {Identifier-992} ' ' / '\t' / EndOfLine
+Space <-  {OPEN-992} ' ' / '\t' / EndOfLine
+Space <-  {Literal-992} ' ' / '\t' / EndOfLine
+Space <- ' {Char-993}  ' / '\t' / EndOfLine
+Space <- ' '  {Comment-996} / '\t' / EndOfLine
+Space <- ' '  {QUESTION-996} / '\t' / EndOfLine
+Space <- ' '  {STAR-996} / '\t' / EndOfLine
+Space <- ' '  {PLUS-996} / '\t' / EndOfLine
+Space <- ' '  {Prefix-996} / '\t' / EndOfLine
+Space <- ' '  {AND-996} / '\t' / EndOfLine
+Space <- ' '  {NOT-996} / '\t' / EndOfLine
+Space <- ' '  {Suffix-996} / '\t' / EndOfLine
+Space <- ' '  {Primary-996} / '\t' / EndOfLine
+Space <- ' '  {Identifier-996} / '\t' / EndOfLine
+Space <- ' '  {OPEN-996} / '\t' / EndOfLine
+Space <- ' '  {Literal-996} / '\t' / EndOfLine
+Space <- ' '  {Klass-996} / '\t' / EndOfLine
+Space <- ' '  {DOT-996} / '\t' / EndOfLine
+Space <- ' '  {SLASH-996} / '\t' / EndOfLine
+Space <- ' ' /  {Comment-998} '\t' / EndOfLine
+Space <- ' ' /  {Sequence-998} '\t' / EndOfLine
+Space <- ' ' /  {Prefix-998} '\t' / EndOfLine
+Space <- ' ' /  {AND-998} '\t' / EndOfLine
+Space <- ' ' /  {NOT-998} '\t' / EndOfLine
+Space <- ' ' /  {Suffix-998} '\t' / EndOfLine
+Space <- ' ' /  {Primary-998} '\t' / EndOfLine
+Space <- ' ' /  {Identifier-998} '\t' / EndOfLine
+Space <- ' ' /  {OPEN-998} '\t' / EndOfLine
+Space <- ' ' /  {Literal-998} '\t' / EndOfLine
+Space <- ' ' / ' {Char-999} \t' / EndOfLine
+Space <- ' ' / '\t'  {Comment-1003} / EndOfLine
+Space <- ' ' / '\t'  {QUESTION-1003} / EndOfLine
+Space <- ' ' / '\t'  {STAR-1003} / EndOfLine
+Space <- ' ' / '\t'  {PLUS-1003} / EndOfLine
+Space <- ' ' / '\t'  {Prefix-1003} / EndOfLine
+Space <- ' ' / '\t'  {AND-1003} / EndOfLine
+Space <- ' ' / '\t'  {NOT-1003} / EndOfLine
+Space <- ' ' / '\t'  {Suffix-1003} / EndOfLine
+Space <- ' ' / '\t'  {Primary-1003} / EndOfLine
+Space <- ' ' / '\t'  {Identifier-1003} / EndOfLine
+Space <- ' ' / '\t'  {OPEN-1003} / EndOfLine
+Space <- ' ' / '\t'  {Literal-1003} / EndOfLine
+Space <- ' ' / '\t'  {Klass-1003} / EndOfLine
+Space <- ' ' / '\t'  {DOT-1003} / EndOfLine
+Space <- ' ' / '\t'  {SLASH-1003} / EndOfLine
+Space <- ' ' / '\t' /  {Comment-1005} EndOfLine
+Space <- ' ' / '\t' /  {Sequence-1005} EndOfLine
+Space <- ' ' / '\t' /  {Prefix-1005} EndOfLine
+Space <- ' ' / '\t' /  {AND-1005} EndOfLine
+Space <- ' ' / '\t' /  {NOT-1005} EndOfLine
+Space <- ' ' / '\t' /  {Suffix-1005} EndOfLine
+Space <- ' ' / '\t' /  {Primary-1005} EndOfLine
+Space <- ' ' / '\t' /  {Identifier-1005} EndOfLine
+ {Comment-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {LEFTARROW-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {QUESTION-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {STAR-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {PLUS-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {Prefix-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {AND-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {NOT-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {Suffix-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {Primary-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {Identifier-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+EndOfLine  {Comment-1025} <- '\r\n' / '\n' / '\r'
+EndOfLine  {LEFTARROW-1025} <- '\r\n' / '\n' / '\r'
+EndOfLine <-  {Comment-1028} '\r\n' / '\n' / '\r'
+ {OPEN-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {Literal-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {Klass-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {DOT-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {SLASH-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {Definition-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+ {Identifier-1015} EndOfLine <- '\r\n' / '\n' / '\r'
+EndOfLine  {Comment-1025} <- '\r\n' / '\n' / '\r'
+EndOfLine  {LEFTARROW-1025} <- '\r\n' / '\n' / '\r'
+EndOfLine <-  {Comment-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {Expression-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {Sequence-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {Prefix-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {AND-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {NOT-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {Suffix-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {Primary-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {Identifier-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {OPEN-1028} '\r\n' / '\n' / '\r'
+EndOfLine <-  {Literal-1028} '\r\n' / '\n' / '\r'
+EndOfLine <- ' {Char-1029} \r\n' / '\n' / '\r'
+EndOfLine <- '\r {Char-1031} \n' / '\n' / '\r'
+EndOfLine <- '\r\n'  {Comment-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {QUESTION-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {STAR-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {PLUS-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {Prefix-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {AND-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {NOT-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {Suffix-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {Primary-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {Identifier-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {OPEN-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {Literal-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {Klass-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {DOT-1035} / '\n' / '\r'
+EndOfLine <- '\r\n'  {SLASH-1035} / '\n' / '\r'
+EndOfLine <- '\r\n' /  {Comment-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {Sequence-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {Prefix-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {AND-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {NOT-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {Suffix-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {Primary-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {Identifier-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {OPEN-1037} '\n' / '\r'
+EndOfLine <- '\r\n' /  {Literal-1037} '\n' / '\r'
+EndOfLine <- '\r\n' / ' {Char-1038} \n' / '\r'
+EndOfLine <- '\r\n' / '\n'  {Comment-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {QUESTION-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {STAR-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {PLUS-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {Prefix-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {AND-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {NOT-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {Suffix-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {Primary-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {Identifier-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {OPEN-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {Literal-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {Klass-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {DOT-1042} / '\r'
+EndOfLine <- '\r\n' / '\n'  {SLASH-1042} / '\r'
+EndOfLine <- '\r\n' / '\n' /  {Comment-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {Sequence-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {Prefix-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {AND-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {NOT-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {Suffix-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {Primary-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {Identifier-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {OPEN-1044} '\r'
+EndOfLine <- '\r\n' / '\n' /  {Literal-1044} '\r'
+EndOfLine <- '\r\n' / '\n' / ' {Char-1045} \r'
+ {Comment-1049} EndOfFile <- !.
+ {QUESTION-1049} EndOfFile <- !.
+ {STAR-1049} EndOfFile <- !.
+ {PLUS-1049} EndOfFile <- !.
+ {Prefix-1049} EndOfFile <- !.
+ {AND-1049} EndOfFile <- !.
+ {NOT-1049} EndOfFile <- !.
+ {Suffix-1049} EndOfFile <- !.
+ {Primary-1049} EndOfFile <- !.
+ {Identifier-1049} EndOfFile <- !.
+EndOfFile  {Comment-1059} <- !.
+EndOfFile  {LEFTARROW-1059} <- !.
+EndOfFile <-  {Comment-1062} !.
+ {OPEN-1049} EndOfFile <- !.
+ {Literal-1049} EndOfFile <- !.
+ {Klass-1049} EndOfFile <- !.
+ {DOT-1049} EndOfFile <- !.
+ {SLASH-1049} EndOfFile <- !.
+ {Definition-1049} EndOfFile <- !.
+ {Identifier-1049} EndOfFile <- !.
+EndOfFile  {Comment-1059} <- !.
+EndOfFile  {LEFTARROW-1059} <- !.
+EndOfFile <-  {Comment-1062} !.
+EndOfFile <-  {Expression-1062} !.
+EndOfFile <-  {Sequence-1062} !.
+EndOfFile <-  {Prefix-1062} !.
+EndOfFile <-  {AND-1062} !.
+EndOfFile <-  {NOT-1062} !.
+EndOfFile <- ! {Comment-1063} .
+EndOfFile <- ! {Suffix-1063} .
+EndOfFile <- ! {Primary-1063} .
+EndOfFile <- ! {Identifier-1063} .
+EndOfFile <- ! {OPEN-1063} .
+EndOfFile <- ! {Literal-1063} .
+EndOfFile <- ! {Klass-1063} .
+EndOfFile <- ! {DOT-1063} .
+EndOfFile <- !. {Comment-1064} 
+EndOfFile <- !. {QUESTION-1064} 
+EndOfFile <- !. {STAR-1064} 
+EndOfFile <- !. {PLUS-1064} 
+EndOfFile <- !. {Prefix-1064} 
+EndOfFile <- !. {AND-1064} 
+EndOfFile <- !. {NOT-1064} 
+EndOfFile <- !. {Suffix-1064} 
+EndOfFile <- !. {Primary-1064} 
+EndOfFile <- !. {Identifier-1064} 
+EndOfFile <- !. {OPEN-1064} 
+EndOfFile <- !. {Literal-1064} 
+EndOfFile <- !. {Klass-1064} 
+EndOfFile <- !. {DOT-1064} 
+EndOfFile <- !. {SLASH-1064} 
+EndOfFile <- !. {Definition-1064} 
+EndOfFile <- !. {Identifier-1064} 
+EndOfFile <- !. {EndOfFile-1064} 
+done, match
